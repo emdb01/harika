@@ -3422,6 +3422,14 @@ div.count-number:before{
     margin: 0;
     padding: 11px 0;
 }
+.captcha{
+	border:1px solid #ccc;
+	padding: 11px;
+}
+.captcha img{
+	display:block
+	
+}
 .breadcrumb > li > a {
     color: #7f7f7f;
     text-decoration: none;
@@ -6242,5 +6250,15 @@ ul.tags li{
 .bg-hover-gray:hover{
 	background-color:rgba(0,0,0,.6);
 }
-
-
+.left{
+	text-align: center;
+    position: relative;
+    margin-top: 68%;
+}
+@media (min-width:360px) and (max-width:760px){
+	.left{
+	visibility:hidden!important;
+	height:0px!important;
+	margin-top: 0%!important;
+}
+}
