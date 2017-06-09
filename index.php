@@ -65,7 +65,7 @@
                                             <span class="icon-bar"></span></button> 
                                         <!-- Logo -->
 
-                                        <a class="navbar-brand" href="index.html" style="margin-top: 23px;">
+                                        <a class="navbar-brand" href="index.php" style="margin-top: 23px;">
                                             TruBiz Partners
                                             <!--<img class="site_logo" alt="Site Logo" style="width:97px" height="86" src="img/logo.png" />-->
                                         </a></div>
@@ -75,6 +75,26 @@
                                         <ul class="nav navbar-nav">
                                             <!-- Home  Mega Menu -->
                                             <li class="mega-menu">
+                                              <?php
+											// $link = pg_Connect("host=localhost dbname=emdb_database user=postgres password=postgres");
+											$link = pg_Connect("host=ec2-107-20-186-238.compute-1.amazonaws.com dbname=ddmpmddvafu4hi user=glbtaourqsrzeg password=9ea107cf27dc0276ca4c06c98a83617a21f6758011a22a4f00f2c980e0c4019d");
+											if (isset($_POST['search'])) {
+												$mid = $_POST['search'];
+												$mid = str_replace("EMDB", "", $mid);
+												$availcheck = pg_exec($link, "select * from jobseeker where emdbid='$mid'");
+												$availcheck_check = pg_numrows($availcheck);
+												if ($availcheck_check > 0) {
+													$row = pg_fetch_array($availcheck);
+													?>
+													<b style="color:blue;"><?php echo $row['status']; ?></b>
+												<?php } else { ?>
+													<b style="color:blue;"><?php echo "Invalid Entry"; ?></b>
+												<?php }
+											} ?>
+
+                                            </li> 
+											
+											<li class="mega-menu">
                                                 <a href="#who-we-are">Who We Are</a>
 
                                             </li>
@@ -109,7 +129,7 @@
                                         <!-- Header Contact Content -->
                                         <!-- Header Search Content -->
                                         <div class="bg-white hide-show-content no-display header-search-content">
-                                            <form  action="checkstatus.php" method="POST" class="navbar-form vertically-absolute-middle">
+                                            <form  action="" method="POST" class="navbar-form vertically-absolute-middle">
                                                 <div class="form-group">
                                                     <input type="text" placeholder="Enter your text &amp; Search Here" class="form-control" id="s" name="search" value="" />
                                                 </div>
@@ -117,6 +137,7 @@
                                             <button class="close">
                                                 <i class="fa fa-times"></i>
                                             </button>
+											
                                         </div>
                                         <!-- Header Search Content -->
                                         <!-- Header Share Content -->
@@ -218,7 +239,7 @@
                     <div class="row">
                         <div class="col-md-12 text-center" data-animation="fadeInUp">
                             <!-- Text -->
-                            <p class="title-description">Are you one of the 6.9 million Americans who are looking to find a job? Are you one of the 28 million small businesses that are struggling to find right talent? If the answer is ‚ÄúYES‚Äù, then come join us to be a part of the next big thing in recruitment industry.</p>
+                            <p class="title-description">Are you one of the 6.9 million Americans who are looking to find a job? Are you one of the 28 million small businesses that are struggling to find right talent? If the answer is ‚ÄúYES‚Ä?, then come join us to be a part of the next big thing in recruitment industry.</p>
                         </div>
                     </div>
                     <div class="row special-feature">
@@ -227,16 +248,16 @@
                             <div class="s-feature-box text-center">
                                 <div class="mask-top">
                                     <!-- Icon -->
-                                    <i class="fa fa-heart-o"></i> 
+                                    <i class="icon-user10"></i> 
                                     <!-- Title -->
                                     <h4>Job Seeker</h4></div>
                                 <div class="mask-bottom">
                                     <!-- Icon -->
-                                    <i class="fa fa-heart-o"></i> 
+                                    <i class="icon-user10"></i> 
                                     <!-- Title -->
                                     <h4>Job Seeker</h4>
                                     <!-- Text -->
-                                    <p>Add the following content for Job Seeker - "Having hard time in reaching hiring managers. Standing out in crowd is an art.</p></div>
+                                    <p>Having hard time in reaching hiring managers. Standing out in crowd is an art.</p></div>
                             </div>
                         </div>
                         <!-- Special Feature Box 2 -->
@@ -244,12 +265,12 @@
                             <div class="s-feature-box text-center">
                                 <div class="mask-top">
                                     <!-- Icon -->
-                                    <i class="fa fa-magic"></i> 
+                                    <i class="icon-user-tie"></i> 
                                     <!-- Title -->
                                     <h4>Recruiter</h4></div>
                                 <div class="mask-bottom">
                                     <!-- Icon -->
-                                    <i class="fa fa-magic"></i> 
+                                    <i class="icon-user-tie"></i> 
                                     <!-- Title -->
                                     <h4>Recruiter</h4>
                                     <!-- Text -->
@@ -261,12 +282,12 @@
                             <div class="s-feature-box text-center">
                                 <div class="mask-top">
                                     <!-- Icon -->
-                                    <i class="fa fa-code"></i> 
+                                    <i class="icon-group3"></i> 
                                     <!-- Title -->
                                     <h4>TruBiz Partners</h4></div>
                                 <div class="mask-bottom">
                                     <!-- Icon -->
-                                    <i class="fa fa-code"></i> 
+                                    <i class="icon-group3"></i> 
                                     <!-- Title -->
                                     <h4>TruBiz Partners</h4>
                                     <!-- Text -->
@@ -278,12 +299,12 @@
                             <div class="s-feature-box text-center">
                                 <div class="mask-top">
                                     <!-- Icon -->
-                                    <i class="fa fa-paper-plane-o"></i> 
+                                    <i class="icon-key-fill"></i> 
                                     <!-- Title -->
                                     <h4>Fall 2017 Launch</h4></div>
                                 <div class="mask-bottom">
                                     <!-- Icon -->
-                                    <i class="fa fa-paper-plane-o"></i> 
+                                    <i class="icon-key-fill"></i> 
                                     <!-- Title -->
                                     <h4>Fall 2017 Launch</h4>
                                     <!-- Text -->
@@ -311,9 +332,9 @@
                                     </h2>
                                     <!-- Content -->
                                     <div class="entry-content">
-                                        <p>‚óè Even in this age of Supercomputers, Big Data and Predictive Analytics, finding active job seekers is still experimentation and pattern recognition as with nearly all human capital information retrieval efforts.</p>
-                                        <p>‚óè By standardizing certain processes of hiring and automating few others, we hope to provide right people access to right data at right time. </p>
-                                        <p>‚óè  ‚ÄúGreat people don‚Äôt do great things but do simple things in a great way.‚Äù -- Anonymous</p>
+                                        <p>‚ó? Even in this age of Supercomputers, Big Data and Predictive Analytics, finding active job seekers is still experimentation and pattern recognition as with nearly all human capital information retrieval efforts.</p>
+                                        <p>‚ó? By standardizing certain processes of hiring and automating few others, we hope to provide right people access to right data at right time. </p>
+                                        <p>‚ó?  ‚ÄúGreat people don‚Äôt do great things but do simple things in a great way.‚Ä? -- Anonymous</p>
                                     </div>
                                 </div>
                                 <div class="item">
@@ -323,8 +344,8 @@
                                     </h2>
                                     <!-- Content -->
                                     <div class="entry-content">
-                                        <p>‚óè We are TruBiz Partners, tech start-up from Atlanta, Georgia. Your friend in recruitment space - we pair technology with common sense!</p>
-                                        <p>‚óè Paragraph2 - A group of seasoned professionals who have a combined workforce experience of 50+ years in staff augmentation and hiring.</p>
+                                        <p>‚ó? We are TruBiz Partners, tech start-up from Atlanta, Georgia. Your friend in recruitment space - we pair technology with common sense!</p>
+                                        <p>‚ó? Paragraph2 - A group of seasoned professionals who have a combined workforce experience of 50+ years in staff augmentation and hiring.</p>
                                     </div>
                                 </div>
                             </div>
@@ -380,30 +401,34 @@
                             <h2 class="text-color">Contact Us Today</h2>
                             <h3 class="black">+0 (123) 456 7890</h3>
                             <h3>
-                                <a class="text-color" href="mailto:info@yourwebsite.com">info@trubizpartners.com</a>
+                                <a class="text-color" href="mailto:info@trubizpartners.com">info@trubizpartners.com</a>
                             </h3>
 
                         </div>
                         <div class="col-md-6">
                             <p class="form-message" style="display: none;"></p>
-                            <div class="contact-form field-border">
+                            <div class="contact-form field-border" >
                                 <!-- Form Begins -->
-                                <form role="form" name="contactform" id="contactform" method="post" action="php/contact-form.php">
+                                <form role="form" name="contactform" id="contactform" method="post" action="createTicket.php">
                                     <!-- Field 1 -->
-                                    <div class="input-text form-group">
-                                        <input type="text" name="contact_name" class="input-name form-control" placeholder="Full Name" />
+                                    <div class="input-text form-group" >
+                                        <input type="text" name="contact_name" class="input-name form-control" required="true" placeholder="Full Name" style="color: #000;"/>
                                     </div>
                                     <!-- Field 2 -->
                                     <div class="input-email form-group">
-                                        <input type="email" name="contact_email" class="input-email form-control" placeholder="Email" />
+                                        <input type="email" name="email" class="input-email form-control" required="true" placeholder="Email" style="color: #000;"/>
                                     </div>
                                     <!-- Field 3 -->
                                     <div class="input-email form-group">
-                                        <input type="text" name="contact_phone" class="input-phone form-control" placeholder="Phone" />
+                                        <input type="text" name="contact_phone" class="input-phone form-control" placeholder="Phone" style="color: #000;"/>
                                     </div>
                                     <!-- Field 4 -->
+                                    <div class="input-email form-group">
+                                        <input type="text" name="subject" class="input-phone form-control" placeholder="Subject" style="color: #000;" required="true"/>
+                                    </div>
+                                    <!-- Field 5 -->
                                     <div class="textarea-message form-group">
-                                        <textarea name="contact_message" class="textarea-message hight-82 form-control" placeholder="Message" rows="2"></textarea>
+                                        <textarea name="description" class="textarea-message hight-82 form-control" required="true" placeholder="Message" rows="2" style="color: #000;"></textarea>
                                     </div>
                                     <!-- Button -->
                                     <button class="btn btn-default btn-block" type="submit" style="color:#fff">Send Now 
@@ -439,8 +464,8 @@
                                 <p>
                                     <strong>Office:</strong> trubizpartners.com
                                     <br />920 Holcomb Bridge Rd,
-                                    <br />Roswell, GA 30076.</p>
-                                <br />United States of America</p>
+                                    <br />Roswell, GA 30076.<br />United States of America</p>
+                                
                                 <!-- Phone -->
                                 <p>
                                     <strong>Call Us:</strong> +0 (123) 456-78-90 or
@@ -523,7 +548,7 @@
                                     <script src="popup/jBox.js"></script>
                                     <script>
                                         $(document).ready(function () {
-
+ 
                                             new jBox('Modal', {
                                                 attach: '#Modal-3',
                                                 width: 450,
@@ -578,6 +603,14 @@
                                                 document.getElementById("Modal-3").disabled = true;
                                             }else{
                                                 document.getElementById("Modal-3").disabled = false;
+												 $.ajax({
+														url: "subscription.php",
+														type: "POST",
+														data: { email: ss},
+														cache: false,
+														success: function (response) {
+													 }
+												 });
                                             }
 
                                             /*if (ss.length > 0) {

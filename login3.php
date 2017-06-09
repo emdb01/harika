@@ -191,9 +191,9 @@
                         
 						<div class="row" role="form">
 						
-                            <div class="col-md-8">
+                            <div class="col-md-12">
                                 <div class="form-group">
-						<label for="exampleInputEmail1" style="display:block">Who are you ?</label>
+						<label for="exampleInputEmail1" style="margin-right:40px;">Who are you ?</label>
 						<label class="radio-inline">
 				  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Job Seeker
 				</label>
@@ -203,19 +203,17 @@
                             </div>
                         
 							
-                            <div class="col-md-8">
+                            <div class="col-md-6">
                                 <div class="form-group">
-						<label for="exampleInputEmail1">Email address</label>
 						<input type="email" placeholder="Enter Email id" id="exampleInputEmail1" class="form-control">
 					  </div>
                             </div>
                            
-							<div class="clearfix"></div>
+							
                         
-                            <div class="col-md-8">
+                            <div class="col-md-6">
                                 <div class="form-group">
-						<label for="exampleInputEmail1">Country</label>
-						<input id="phone" type="tel" placeholder="Enter Country" class="form-control" >
+						<input id="phone" type="tel" placeholder="Select Country" class="form-control" >
 					  </div>
                             </div>
                             

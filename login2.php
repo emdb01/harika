@@ -42,6 +42,10 @@
 		.btn-default {
     color: #f7f7f7!important; 
 }
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    border-top: none!important;
+	padding:10px 0px
+}
 		</style>
     </head>
     <body>
@@ -189,86 +193,68 @@
     ">Don&#39;t have an Account? Register Now.</h3>
                         <div id="success"></div>
                         
-						<div class="row" role="form">
-						
-                            <div class="col-md-8">
-                                <div class="form-group">
-						<label for="exampleInputEmail1" style="display:block">Who are you ?</label>
-						<label class="radio-inline">
+					<table class="table table-condensed">
+					 <tbody>
+						<tr>
+						  <th scope="row" class="col-xs-4 col-sm-3 col-md-3">Who are you ?</th>
+						  <td class="col-xs-8 col-sm-9 col-md-9"><label class="radio-inline">
 				  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Job Seeker
 				</label>
 				<label class="radio-inline">
-				  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Recruiter</label>
-					  </div>
-                            </div>
-                        
-							
-                            <div class="col-md-8">
-                                <div class="form-group">
-						<label for="exampleInputEmail1">Email address</label>
+				  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Recruiter</label></td>
+						</tr>
+						<tr>
+						  <th scope="row">Email Address</th>
+						  <td><div class="form-group">
 						<input type="email" placeholder="Enter Email id" id="exampleInputEmail1" class="form-control">
-					  </div>
-                            </div>
-                           
-							<div class="clearfix"></div>
-                        
-                            <div class="col-md-8">
-                                <div class="form-group">
-						<label for="exampleInputEmail1">Country</label>
-						<input id="phone" type="tel" placeholder="Enter Country" class="form-control" >
-					  </div>
-                            </div>
-                            
-						
-                            <div class="col-md-12">
-                                <div class="form-group">
-						<label for="exampleInputEmail1" style="display:block">Verification</label>
+					  </div></td>
+						</tr>
+						<tr>
+						  <th scope="row">Country</th>
+						  <td><div class="form-group">
+						<input id="phone" type="tel" placeholder="Select Country" class="form-control" >
+					  </div></td>
+						</tr>
+						<tr>
+						  <th scope="row">Verification</th>
+						  <td><div class="form-group">
 						<label class="checkbox-inline">
 				  <input type="checkbox" id="inlineCheckbox1" value="option1"> Skip (Phone Verification Required )
 				</label>
-					  </div>
-                            </div>
-                            
+					  </div></td>
+						</tr>
 						
-                            
-                            
-							
-							
-							<div class="col-md-12"style="display:block">
-                                <div class="form-group">
-								<div class=""  style="display:block">
-					<label for="exampleInputEmail1" style="display:block">Type the text</label></div>
-                                <div class="captcha col-md-3 col-xs-6 col-sm-6" style="display:block">
+						<tr>
+						  <th scope="row">Type the text</th>
+						  <td><div class="form-group">
+						<div class="" style="margin-right:40px">
 								
  
-<img src="img/captcha.png" width="80%" style="margin:auto"></div></div></div><div class="clearfix"></div>
-<div class="col-md-6"style="display:block">
-                                <div class="form-group">
-<div class=""  style="float:left;width:50%">
+<img src="img/captcha.png" width="30%" style="padding: 0px 0px 20px;"></div>
+<div class="form-group">
+<div class=""  style="float:left;width:40%">
 						<input id="phone" type="tel" placeholder="Enter the text"  class="form-control"></div><div class=""  style="display:inline;margin-left:20px;width:50%;line-height: 41px;"><span style="margin-right:10px;" class="icon-refresh8"></span>	 
 						<span class="icon-volume-up3"style="margin-right:10px;"></span>	 
 						<span class="icon-question3"style="margin-right:10px;"></span>	 
 					  
 					  </div>
 					  </div>
-					  </div>
-                            
-							
-							
-							
+					  </div></td>
+						</tr>
+						
+					  </tbody>
+					</table>	
+						
 						<div class="clearfix"></div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-					<label class="checkbox-inline">
-				  <input type="checkbox" id="inlineCheckbox1" value="option1"> I agree to EMDB  terms of services and privacy policy
-				</label>
-					  </div>
-                            </div>
-                           <div class="clearfix"></div>
-						   <div class="col-md-12">
+						   <div class="">
                         <button id="submit" class="btn btn-default">Create Account</button>  
                         </div>
-                        </div>
+						
+						
+						
+						
+						
+						
                         
                         <!-- .buttons-box --></form>
                     </div>
