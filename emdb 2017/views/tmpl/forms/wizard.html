@@ -1,0 +1,662 @@
+<div class="page page-form-wizard">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">Form Stuff</a>
+        </li>
+        <li>
+          <a ui-sref="app.forms.wizard">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+
+
+    <uib-tabset class="tab-animation tab-container tab-wizard" justified="true" set-ng-animate="true" ng-init="steps={step1:true, step2:false, step3:false, step4:false, step5: false}">
+
+      <uib-tab active="steps.step1">
+
+        <uib-tab-heading>
+          Select Availability Status
+          <span class="badge badge-default pull-right wizard-step">1</span>
+        </uib-tab-heading>
+
+        <form name="step1" role="form" novalidate class="form-validation">
+
+          <div class="row p-30">
+                            <div class="col-sm-2 col-md-2">
+                                 
+                            </div>
+                            <div class="col-sm-12 col-md-12 emdb">
+                                <div class="col-xs-4 col-sm-4 col-md-4" style="text-align:center">Available Now</div>
+						   <div class="col-xs-4 col-md-4" style="text-align:center">Shopping around</div>
+						   <div class="col-xs-4 col-md-4" style="text-align:center">Not Available</div>
+						   
+						     
+            <center><md-slider flex class="md-warn" md-discrete ng-model="rating2" step="1" min="1" max="3" aria-label="rating" style="width:59%;margin:auto;padding:30px 0px;">
+            </md-slider></center>
+                            </div>
+							<div class="col-sm-2 col-md-2">
+                                 
+                            </div>
+                        </div>
+
+          
+
+          
+
+          <button type="submit" ng-disabled="step1.$invalid" class="btn btn-default" ng-click="steps.step2=true" style="background-color: #dedede;">Next</button>
+
+        </form>
+
+      </uib-tab>
+
+      <uib-tab active="steps.step2">
+
+        <uib-tab-heading>
+          Enter Personal Info
+          <span class="badge badge-default pull-right wizard-step">2</span>
+        </uib-tab-heading>
+
+        <form name="step2" role="form" novalidate>
+
+          <div class="row">
+
+                      <div class="form-group    col-sm-12  col-md-12">
+						<label for="exampleInputEmail1">Name</label>
+						<div class="row">
+				  <div class="col-xs-4">
+					<input type="text" class="form-control" placeholder="First">
+				  </div>
+				  <div class="col-xs-4">
+					<input type="text" class="form-control" placeholder="Middle">
+				  </div>
+				  <div class="col-xs-4">
+					<input type="text" class="form-control" placeholder="Last">
+				  </div>
+				</div>
+					  </div>
+
+                      
+
+                    
+
+          </div>
+
+		  <div class="row">
+
+                      <div class="form-group    col-sm-12  col-md-12">
+						<label for="exampleInputEmail1">Birthday</label>
+						<div class="row">
+						 <div class="col-sm-4 col-xs-5">
+						 <select name="f2" class="form-control mb-10" ng-model="fc2" required>
+                    <option value="">Month</option>
+                    <option>Jan</option>
+				  <option>Feb</option>
+				  <option>March</option>
+				  <option>April</option>
+                  </select>
+					
+				  </div>
+				  <div class="col-sm-4 col-xs-4">
+					<select name="f2" class="form-control mb-10" ng-model="fc2" required>
+                    <option value="">Day</option>
+                    <option value="foo">1</option>
+                    <option value="bar">2</option>
+                  </select>
+				  </div>
+				  <div class="col-xs-3 col-sm-4">
+					<input type="text" class="form-control" placeholder="Year">
+				  </div>
+				  </div>
+					  </div>
+
+                    </div>
+          <div class="row">
+
+                      <div class="form-group   col-sm-12  col-md-12">
+						<label for="exampleInputPassword1">Gender</label>
+						<div class="row">
+						 <div class="col-sm-12">
+					<select class="form-control">
+				  <option>Select</option>
+				  <option>Male</option>
+				  <option>Female</option> 
+				</select>
+				  </div>
+				  </div>
+					  </div>
+
+                    </div>
+<div class="row form-validation">
+<div class="form-group col-md-6" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine, 'has-success' : userForm.password.$valid && !userForm.password.$pristine}">
+                  <label for="password">New Password </label>
+                  <input type="password" name="password" id="password" class="form-control" ng-model="user.password" ng-minlength="6" required>
+                  <p class="help-block">
+                    <span ng-show="userForm.password.$invalid && !userForm.password.$pristine">Password is required.</span>
+                    <span ng-show="userForm.password.$error.minlength">Password is too short.</span>
+                  </p>
+                </div>
+                      <div class="form-group col-md-6" ng-class="{ 'has-error' : userForm.passwordConfirm.$invalid && !userForm.passwordConfirm.$pristine, 'has-success' : userForm.passwordConfirm.$valid && !userForm.passwordConfirm.$pristine}">
+                  <label for="passwordConfirm">Confirm Password </label>
+                  <input type="password" name="passwordConfirm" id="passwordConfirm" class="form-control" ng-model="user.passwordConfirm" ui-validate=" '$value==user.password' " ui-validate-watch=" 'user.password' " required>
+                  <p class="help-block">
+                    <span ng-show='userForm.passwordConfirm.$error.validator'>Passwords do not match!</span>
+                  </p>
+                </div>
+
+                      
+
+                    </div>
+					
+					<div class="row">
+
+					
+				<div class="form-group col-md-6" ng-class="{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine, 'has-success' : userForm.phone.$valid && !userForm.phone.$pristine}">
+                <label for="phone">Primary Contact Number </label>
+                <input type="text" name="phone" id="phone" class="form-control" ng-model="user.phone" placeholder="(XXX) XXXX XXX" ng-pattern="/\([0-9]{3}\) ([0-9]{3}) ([0-9]{3})$/">
+                <p class="help-block">
+                  <span ng-show="userForm.phone.$invalid && !userForm.phone.$pristine">Phone in bad format.</span>
+                </p>
+              </div>	
+					<div class="form-group col-md-6" ng-class="{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine, 'has-success' : userForm.phone.$valid && !userForm.phone.$pristine}">
+                <label for="phone">Secondary Contact Number </label>
+                <input type="text" name="phone" id="phone" class="form-control" ng-model="user.phone" placeholder="(XXX) XXXX XXX" ng-pattern="/\([0-9]{3}\) ([0-9]{3}) ([0-9]{3})$/">
+                <p class="help-block">
+                  <span ng-show="userForm.phone.$invalid && !userForm.phone.$pristine">Phone in bad format.</span>
+                </p>
+              </div>
+					
+					
+					
+                    </div>
+					<div class="row form-validation">
+
+                      <div class="form-group col-md-6">
+                <label class="control-label">Email</label>
+                
+                  <input type="email" name="fc11" class="form-control" placeholder="Email" ng-model="fc11" required >
+               
+              </div>
+
+                      <div class="form-group  col-sm-12 col-md-6">
+						<label for="exampleInputEmail1">Skype Id</label>
+						<div class="row">
+				  <div class="col-sm-12">
+					<input  type="text" placeholder="Skype Id" class="form-control" >
+				  </div>
+				   
+				</div>
+					  </div>
+
+                    </div>
+					<div class="row">
+
+                      <div class="form-group    col-sm-12  col-md-12">
+						<label for="exampleInputFile">Profile</label>
+						</br>
+						<img src="default.jpg" style="width:120px">
+						
+						 
+					  </div>
+<div class="form-group    col-sm-12  col-md-12">
+                      <button type="button" class="btn btn-primary btn-xs">Submit</button>
+
+                    </div>
+                    </div>
+          <button type="submit" class="btn btn-default" ng-click="steps.step1=true" style="background-color: #dedede;">Previous</button>
+          <button type="submit"  class="btn btn-default pull-right" ng-click="steps.step3=true" style="background-color: #dedede;">Next</button>
+
+        </form>
+
+      </uib-tab>
+
+      <uib-tab active="steps.step3">
+
+        <uib-tab-heading>
+          Enter Address Info
+          <span class="badge badge-default pull-right wizard-step">3</span>
+        </uib-tab-heading>
+
+        <form name="step3" role="form" novalidate>
+
+         
+          <div class="row">
+            
+            
+            <div class="tile-body col-sm-12  col-md-12">
+
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td class="col-xs-1  col-md-1" style="text-align:center;border-top:none;padding: 20px 0px;
+    font-size: 17px;">
+                <i class="glyphicon glyphicon-home"></i>
+              </td>
+                  <td class="col-xs-7  col-md-8"  style="padding:20px 10px;border-top:none"><p>920, Holcomb Bridge Road, Suite # 410, Roswell, GA 30076920, Holcomb Bridge Road, Suite # 410, Roswell, GA 30076920, Holcomb Bridge Road, Suite # 410, Roswell, GA 30076</p></td>
+                  <td class="col-xs-3  col-md-2" style="text-align:center;border-top:none;padding:20px 0px;"><label class="radio checkbox-custom checkbox-custom-sm" style="margin-top: 0px;margin-bottom: 0px;">
+                      <input type="radio" ng-model="options.position" value="toast-top-right"><i></i> Default
+                    </label> </td>
+                  <td class="col-xs-1  col-md-1" style="text-align:center;border-top:none;padding: 20px 0px;
+    font-size: 17px;">
+                <center><a href tile-control-close><i class="fa fa-times"></i></a></center>
+             </td>
+                </tr>
+                
+              </tbody>
+            </table>
+
+          </div>
+             
+			<div style="border-top:1px solid #ccc;clear:both;padding:0px 0px 0px;"></div>
+			
+			<div class="tile-body">
+			<div class="table-responsive" style="border: none;">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td rowspan="5" class="" width="30%" style="text-align:left; border-top: none;   vertical-align: middle;"> 
+
+						  <select class="form-control">
+				  <option>Home</option>
+				  <option>Office</option>
+				  <option>Office 2</option> 
+				</select> </td>
+                    <td colspan="2" width="70%" style="border-top: none;"><label for="exampleInputPassword1">Address First Line</label>
+					<input type="text" class="form-control col-xs-12" placeholder="Address First Line">
+					</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" style="border-top: none;"><label for="exampleInputPassword1">Address Second Line</label>
+					<input type="text" class="form-control col-xs-12" placeholder="Address Second Line"></td>
+                  </tr>
+                  <tr>
+                    <td width="40%" style="border-top: none;"><label>City</label>
+						 
+					<input type="text" class="form-control" placeholder="Type City">
+				
+						 
+				</td>
+                    <td width="40%" style="border-top: none;"><label>State</label>
+						
+					<select class="form-control">
+				  <option>AP</option>
+				  <option>Telangana</option>
+				  <option>Delhi</option> 
+				</select>
+				 </td>
+                  </tr>
+				  
+				  
+				  <tr>
+                    <td style="border-top: none;"><label>Zip Code</label>
+						 
+					<input type="text" class="form-control" placeholder="Enter Zip Code">
+				
+						 
+				</td>
+                    <td style="border-top: none;"><label>Country</label>
+						
+					<select class="form-control">
+				  <option>India</option>
+				  <option>USA</option>
+				  <option>Sri lanka</option> 
+				</select>
+				 </td>
+                  </tr>
+				  
+				  
+				  
+                </tbody>
+              </table>
+			  <div class="form-group    col-sm-12  col-md-12">
+                      <button type="button" class="btn btn-primary btn-xs">Add</button>
+
+                    </div>
+            </div>
+          </div>
+          </div>
+
+         
+         
+
+          <button type="submit" class="btn btn-default" ng-click="steps.step2=true" style="background-color: #dedede;">Previous</button>
+          <button type="submit"  class="btn btn-default pull-right" ng-click="steps.step4=true" style="background-color: #dedede;">Next</button>
+
+        </form>
+      </uib-tab>
+
+      <uib-tab active="steps.step4" disable="step3.$invalid">
+
+        <uib-tab-heading>
+          Enter Education Info
+          <span class="badge badge-default pull-right wizard-step">4</span>
+        </uib-tab-heading>
+<div class="tile-body col-sm-12  col-md-12">
+
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td class="col-sm-1  col-md-1" style="border-top:none;padding: 20px 0px;
+    ">
+                2012</i>
+              </td>
+                  <td class="col-sm-10  col-md-10" style="border-top:none;padding:20px 10px;"><p>920, Holcomb Bridge Road, Suite # 410, Roswell, GA 30076920, Holcomb Bridge Road, Suite # 410, Roswell, GA 30076920, Holcomb Bridge Road, Suite # 410, Roswell, GA 30076</p></td>
+                 
+                  <td class="col-sm-1  col-md-1" style="text-align:center;border-top:none;padding: 20px 0px;
+    f">
+                <center><a href tile-control-close><i class="fa fa-times"></i></a></center>
+             </td>
+                </tr>
+                
+              </tbody>
+            </table>
+
+          </div>
+		  <div style="border-top:1px solid #ccc;clear:both;padding:30px 0px;"></div>
+		  
+        <form name="step4" role="form" novalidate>
+
+          <div class="row">
+            <div class="form-group col-md-6 mb-0">
+              <label for="">Degree </label>
+              <select class="form-control">
+				  <option>Select</option>
+				  <option>Computer Science</option>
+				  <option>ECE</option> 
+				</select>
+               <p class="help-block">
+                <span ng-show="step4.email.$invalid && !step4.email.$pristine">Email is required.</span>
+               </p>
+            </div>
+            <div class="form-group col-md-6 mb-0">
+              <label for="phone">University </label>
+             <select class="form-control">
+				  <option>Select</option>
+				  <option>University of USA</option>
+				  <option>University of Texas</option> 
+				</select>
+               <p class="help-block">
+                <span ng-show="step4.phone.$invalid && !step4.phone.$pristine">Bad format.</span>
+               </p>
+            </div>
+          </div>
+
+          <div class="row">
+            
+            <div class="form-group col-md-6 mb-0">
+              <label for="phone">Passout </label>
+             <select class="form-control">
+				  <option>2012</option>
+				  <option>2011</option>
+				  <option>2010</option> 
+				</select>
+               <p class="help-block">
+                <span ng-show="step4.phone.$invalid && !step4.phone.$pristine">Bad format.</span>
+               </p>
+            </div>
+          </div>
+<div class="form-group ">
+                      <button type="button" class="btn btn-primary btn-xs">Submit</button>
+
+                    </div>
+          <button type="submit" class="btn btn-default" ng-click="steps.step3=true" style="background-color: #dedede;">Previous</button>
+          <button type="submit" ng-disabled="step4.$invalid" class="btn btn-default pull-right" ng-click="steps.step5=true" style="background-color: #dedede;">Next</button>
+
+        </form>
+      </uib-tab>
+
+      <uib-tab active="steps.step5" disable="step4.$invalid">
+
+        <uib-tab-heading>
+          Enter Avtar Info
+          <span class="pull-right wizard-step">5</span>
+        </uib-tab-heading>
+		<div style="padding-bottom:20px;">
+
+        <div class="tile-body">
+<div class="">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td style="border-top:none;padding: 20px 0px;width: 10%;
+    ">
+                Name
+              </td>
+                  <td  style="border-top:none;padding:20px 10px;width: 80%;">University of hyderabad.500060University of hyderabad.500060University of hyderabad.500060University of hyderabad.500060</td>
+                 <td colspan="2" style="padding: 20px 0px;
+    width: 10%;border-top:none">
+                <center><a href tile-control-close><i class="fa fa-times"></i></a></center>
+             </td>
+                  
+                </tr>
+                <tr>
+                  <td style="padding: 20px 0px;
+    border-top:none">
+                Skill
+              </td>
+                  <td  style="padding:20px 10px;border-top:none">University of hyderabad.500060University of hyderabad.500060University of hyderabad.500060University of hyderabad.500060</td>
+                 
+                 
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          </div>
+		  <div class="tile-body">
+<div class="">
+<table class="table">
+
+<tbody>
+<tr><th class="" style="vertical-align: middle;width: 30%;border-top:none"></th>
+				  <th class="" style="vertical-align: middle;width: 30%;border-top:none"></th>
+				  <th class="" style="text-align:center;width: 20%;vertical-align: middle;border-top:none"><label>Delete</label></th>
+				  <th class="" style="text-align:center;width: 20%;vertical-align: middle;border-top:none"><label>Default</label></th>
+				   
+				</tr>
+
+
+
+
+				   <tr>
+				  <td class="" rowspan="3" style="vertical-align: middle;    padding-left: 0px; border-top:none"><label>Documents</label></td>
+				  <td style="padding-left: 0px;border-top:none">University </td>
+				  <td class="" style="border-top:none;text-align:center"><input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+   
+                 </td>
+				  
+				  <td class="" style="border-top:none;text-align:center"> <i class="glyphicon glyphicon-trash"></i></td>
+				  
+				</tr>
+				   <tr>
+				 
+				  <td style="padding-left: 0px;border-top:none">University </td>
+				  <td class="" style="border-top:none;text-align:center"><input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+   
+        </td>
+				  
+				  <td class="" style="border-top:none;text-align:center"> <i class="glyphicon glyphicon-trash"></i></td>
+				  
+				</tr>
+				<tr>
+				  
+				  <td style="padding-left: 0px;border-top:none">University </td>
+				  <td class="" style="border-top:none;text-align:center"><input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+   
+              </td>
+				  
+				  <td class="" style="border-top:none;text-align:center"> <i class="glyphicon glyphicon-trash"></i></td>
+				  
+				</tr>
+				
+				</tbody>
+				</table></div>
+          </div></div>
+		  <div style="border-top:1px solid #ccc;clear:both;padding:0px 0px 0px;"></div>
+        <form name="step5" role="form" novalidate>
+
+          <div class="form-group" style="margin-top:30px">
+						<label for="exampleInputEmail1">Name</label>
+						<div class="row">
+				  <div class="col-sm-8   col-md-9">
+					<select class="form-control">
+				  <option>Business Analysis</option>
+				  <option>Testing</option>
+				  <option>PHP</option> 
+				</select>
+				  </div>
+				   
+				    
+				</div>
+					  </div>
+					  
+			<div class="form-group col-sm-8">
+						<label for="exampleInputEmail1">Skills</label>
+						<md-content class="md-padding chipsdemoBasicUsage " ng-controller="mtChipsBasicDemoCtrl as ctrl">
+						<md-chips
+            ng-model="ctrl.tags"
+            readonly="ctrl.readonly"
+            placeholder="Enter a new skill"
+            delete-button-label="Remove Tag"
+            delete-hint="Press delete to remove tag"
+            secondary-placeholder="Enter a new skill"></md-chips>
+				</md-content>
+					  </div>		  
+					  
+					  
+					  
+					  
+					  
+					  
+
+          
+
+        </form>
+
+		
+		<div class="tile-body">
+<div class="">
+            <table class="table">
+              <tbody>
+                <tr><th class="" style="    padding-left: 0px;vertical-align: middle;border-top:none">Documents</th>
+				   
+				  <th class="" style="text-align:center;vertical-align: middle;border-top:none"><label>Delete</label></th>
+				  <th class="" style="text-align:center;vertical-align: middle;border-top:none"><label>Default</label></th>
+				   
+				</tr>
+                <tr>
+				  
+				  <td class="" style="padding-left: 0px;border-top:none">Resume-harika.pdf </td>
+				  <td class="" style="border-top:none;text-align:center"> <i class="glyphicon glyphicon-trash"></i></td>
+				  
+				  <td class="" style="border-top:none;text-align:center"><input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"></td>
+				  
+				</tr>
+				
+				<tr>
+				  
+				  <td class="" style="padding-left: 0px;border-top:none">Resume-harika.pdf </td>
+				  <td class="" style="border-top:none;text-align:center"> <i class="glyphicon glyphicon-trash"></i></td>
+				  
+				  <td class="" style="border-top:none;text-align:center"><input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"></td>
+				  
+				</tr>
+				<tr>
+				  
+				  <td class="" style="padding-left: 0px;border-top:none">Resume-harika.pdf </td>
+				  <td class="" style="border-top:none;text-align:center"> <i class="glyphicon glyphicon-trash"></i></td>
+				  
+				  <td class="" style="border-top:none;text-align:center"><input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"></td>
+				  
+				</tr>
+              </tbody>
+            </table>
+			<div class="">
+<button type="button" class="btn btn-slategray mb-10">Upload Additional Documents <i class="fa fa-upload" style=""></i></button>
+
+         
+          </div>
+          </div>
+          </div>
+		  
+			
+		  <div class="tile-body" style="margin-top:20px;">
+<div class="">
+            <table class="table">
+              <tbody>
+                <tr><th class="col-xs-8 col-sm-8 col-md-5" style="padding-left: 0px;vertical-align: middle;border-top:none">Certificates</th>
+				   
+				  <th class="col-xs-2 col-sm-2 col-md-2" style="text-align:center;vertical-align: middle;border-top:none"><label>Delete</label></th>
+				   
+				   
+				</tr>
+                <tr>
+				  
+				  <td class="" style="padding-left: 0px;border-top:none">ITL </td>
+				  <td class="" style="border-top:none;text-align:center"> <i class="glyphicon glyphicon-trash"></i></td>
+				  
+			 
+				</tr>
+				
+			 
+              </tbody>
+            </table>
+			<div class="form-group">
+			<div class="col-md-6 col-xs-8 col-sm-8" style="padding-left: 0px;">
+                 <input  class="form-control" placeholder="Add more Certificates">
+                 
+                </div>	 
+
+<div class="col-md-6 col-xs-4 col-sm-4">
+<button type="button" class="btn btn-primary btn-xs">Add</button>
+				
+					  
+          </div>
+          </div>
+		  </br>
+		  <div style="display:block;margin-top:30px;">
+		  
+          <button type="submit" class="btn btn-default" ng-click="steps.step4=true" style="background-color: #dedede;">Previous</button>
+          <button type="submit" ng-disabled="step5.$invalid" class="btn btn-success pull-right">Finish</button>
+
+      </uib-tab>
+
+    </uib-tabset>
+
+
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>
+</div>
