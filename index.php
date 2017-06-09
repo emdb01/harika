@@ -409,7 +409,7 @@
                             <p class="form-message" style="display: none;"></p>
                             <div class="contact-form field-border" >
                                 <!-- Form Begins -->
-                                <form role="form" name="contactform" id="contactform" method="post" action="createTicket.php">
+                                <form role="form" method="post" action="ticket.php">
                                     <!-- Field 1 -->
                                     <div class="input-text form-group" >
                                         <input type="text" name="contact_name" class="input-name form-control" required="true" placeholder="Full Name" style="color: #000;"/>
