@@ -1,4 +1,11 @@
-<div class="page page-ui-grid">
+<style>
+@media screen and (max-width: 768px)
+ 
+.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+    visibility:hidden!important
+}
+</style>
+<div class="page page-datatables">
 
 
 
@@ -18,7 +25,7 @@
           <a href="javascript:;">Tables</a>
         </li>
         <li>
-          <a ui-sref="app.tables.ui-grid">{{page.title}}</a>
+          <a ui-sref="app.tables.datatables">{{page.title}}</a>
         </li>
       </ul>
 
@@ -39,356 +46,131 @@
     <!-- row -->
     <div class="row">
       <!-- col -->
-      <div class="col-md-6">
+      <div class="col-md-12">
 
 
         <!-- tile -->
-        <section class="tile" fullscreen="isFullscreen01">
+   
+        <!-- /tile -->
+
+
+        <!-- tile -->
+      
+        <!-- /tile -->
+
+
+        <!-- tile -->
+        
+        <!-- /tile -->
+
+<section class="tile" fullscreen="isFullscreen02">
 
           <!-- tile header -->
-          <div class="tile-header dvd dvd-btm">
-            <h1 class="custom-font"><strong>Basic </strong>Example</h1>
-            <ul class="controls">
+          <div class="tile-header media emdbtitle">
+            <div class="pull-left thumb  col-md-2 col-xs-1">
+                <img class="media-object img-circle" src="images/ici-avatar.54b0e928.jpg" alt="">
+              </div>
+			  <div class="mb-0 mt-10 col-md-8 col-xs-8">
+                  <strong style="color:#fff">First Name</strong> <span style="color:#fff">Last Name</span> <strong id="emdbid">EM1234567891</strong>
+                </div>
+            <ul class="controls shareemdb col-md-2 col-xs-3 col-sm-2">
               <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
 
-                <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+                <a href ><i class="fa fa-share-alt"></i></a>
 
-                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
-                  <li>
-                    <a href tile-control-toggle>
-                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
-                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-refresh ng-click="ajaxFaker()">
-                      <fa name="refresh"></fa> Refresh
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-fullscreen ng-click="isFullscreen01 = !isFullscreen01">
-                      <fa name="expand"></fa> Fullscreen
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-lightbox>
-                      <fa name="magnet"></fa> Open in Lightbox
-                    </a>
-                  </li>
-
-                </ul>
+                
 
               </li>
-              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+              <li class="remove"><a href ><md-icon md-font-icon="zmdi zmdi-comment" ng-click="doSecondaryAction($event)" aria-label="Open Chat" class="md-secondary md-hue-3" ng-class="{'md-primary': person.newMessage}" style="color: rgb(149, 162, 169)!important;"></md-icon></a></li>
             </ul>
           </div>
           <!-- /tile header -->
 
           <!-- tile body -->
-          <div class="tile-body" ng-controller="BasicUiGridCtrl">
+          <div class="tile-body p-0" style="padding-top:20px!important ;">
 
-            <div id="grid1" ui-grid="gridOptions" class="grid"></div>
+            <table class="table emdbdetails">
+               
+              <tbody>
+			   <tr>
+                  <th>Company</th>
+                  <td>technodrive</td>
+                </tr>
+                <tr>
+                  <th>Phone</th>
+                  <td>1234 567 789</td>
+                </tr>
+                <tr>
+                  <th>Fax</th>
+                  <td>12345678</td>
+                </tr>
+                <tr>
+                  <th>Email</th>
+                  <td>info@technodrive.com</td>
+                </tr>
+				<tr>
+                  <th>Address</th>
+                  <td>920, Holcomb Bridge Road, Suite # 410, Roswell, GA 30076920</td>
+                </tr>
+				<tr>
+                  <th>Rating</th>
+                  <td><i class="glyphicon glyphicon-star"></i> <i class="glyphicon glyphicon-star"></i> <i class="glyphicon glyphicon-star"></i> <i class="icon-star"></i>  </td>
+                </tr>
+				<tr>
+                  <th>Comments</th>
+                  <td>
+	  <div class="col-md-6">
+<div class="carousel slide" id="myCarousel">
+  <div class="carousel-inner">
+    <div class="item active">
+      <div class="col-md-4 col-xs-4" style="border: 1px solid #ccc;"><p style="padding-top:5px">920, Holcomb Bridge Road, Suite # 410, Roswell<p></div>
+    </div>
+    <div class="item">
+      <div class="col-md-4  col-xs-4" style="border: 1px solid #ccc;"><p style="padding-top:5px">920, Holcomb Bridge Road, Suite # 410, Roswell<p></div>
+    </div>
+     <div class="item">
+      <div class="col-md-4  col-xs-4" style="border: 1px solid #ccc;"><p style="padding-top:5px">920, Holcomb Bridge Road, Suite # 410, Roswell<p></div>
+    </div>
+	<div class="item">
+      <div class="col-md-4  col-xs-4" style="border: 1px solid #ccc;"><p style="padding-top:5px">920, Holcomb Bridge Road, Suite # 410, Roswell<p></div>
+    </div>
+	<div class="item">
+      <div class="col-md-4  col-xs-4" style="border: 1px solid #ccc;"><p style="padding-top:5px">920, Holcomb Bridge Road, Suite # 410, Roswell<p></div>
+    </div>
+  </div> 
+</div>
+</div>
+
+	  
+	  
+	  
+	  
+	  
+	  
+	  </td>
+                </tr>
+              </tbody>
+            </table>
 
           </div>
+		  <div class="tile-body p-15">
+		  <button type="button" class="btn btn-success mb-10">Add</button>
+		  <button type="button" class="btn btn-danger mb-10">Remove</button>
+		  </div>
           <!-- /tile body -->
 
         </section>
-        <!-- /tile -->
-
 
         <!-- tile -->
-        <section class="tile" fullscreen="isFullscreen03">
-
-          <!-- tile header -->
-          <div class="tile-header dvd dvd-btm">
-            <h1 class="custom-font"><strong>Table </strong>Footer</h1>
-            <ul class="controls">
-              <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
-
-                <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
-
-                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
-                  <li>
-                    <a href tile-control-toggle>
-                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
-                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-refresh ng-click="ajaxFaker()">
-                      <fa name="refresh"></fa> Refresh
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-fullscreen ng-click="isFullscreen03 = !isFullscreen03">
-                      <fa name="expand"></fa> Fullscreen
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-lightbox>
-                      <fa name="magnet"></fa> Open in Lightbox
-                    </a>
-                  </li>
-
-                </ul>
-
-              </li>
-              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
-            </ul>
-          </div>
-          <!-- /tile header -->
-
-          <!-- tile body -->
-          <div class="tile-body" ng-controller="FooterUiGridCtrl">
-
-            <button id="footerButton" class="btn btn-sm btn-default mb-10" ng-click="toggleFooter()">Toggle Grid Footer</button>
-            <button class="btn btn-sm btn-default mb-10" ng-click="toggleColumnFooter()">Toggle Column Footer</button>
-            <div id="grid3" ui-grid="gridOptions" class="grid"></div>
-
-          </div>
-          <!-- /tile body -->
-
-        </section>
+        
         <!-- /tile -->
 
-
-        <!-- tile -->
-        <section class="tile" fullscreen="isFullscreen05">
-
-          <!-- tile header -->
-          <div class="tile-header dvd dvd-btm">
-            <h1 class="custom-font"><strong>Edit </strong>Feature</h1>
-            <ul class="controls">
-              <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
-
-                <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
-
-                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
-                  <li>
-                    <a href tile-control-toggle>
-                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
-                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-refresh ng-click="ajaxFaker()">
-                      <fa name="refresh"></fa> Refresh
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-fullscreen ng-click="isFullscreen05 = !isFullscreen05">
-                      <fa name="expand"></fa> Fullscreen
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-lightbox>
-                      <fa name="magnet"></fa> Open in Lightbox
-                    </a>
-                  </li>
-
-                </ul>
-
-              </li>
-              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
-            </ul>
-          </div>
-          <!-- /tile header -->
-
-          <!-- tile body -->
-          <div class="tile-body" ng-controller="EditUiGridCtrl">
-
-            <pre class="alert alert-info mb-10"><strong>Last Cell Edited:</strong> {{msg.lastCellEdited}}</pre>
-
-            <div id="grid5" ui-grid="gridOptions" class="grid" ui-grid-edit></div>
-
-          </div>
-          <!-- /tile body -->
-
-        </section>
-        <!-- /tile -->
 
 
       </div>
       <!-- /col -->
-
-
-
-      <!-- col -->
-      <div class="col-md-6">
-
-
-        <!-- tile -->
-        <section class="tile" fullscreen="isFullscreen02">
-
-          <!-- tile header -->
-          <div class="tile-header dvd dvd-btm">
-            <h1 class="custom-font"><strong>Table </strong>Filtering</h1>
-            <ul class="controls">
-              <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
-
-                <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
-
-                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
-                  <li>
-                    <a href tile-control-toggle>
-                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
-                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-refresh ng-click="ajaxFaker()">
-                      <fa name="refresh"></fa> Refresh
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-fullscreen ng-click="isFullscreen02 = !isFullscreen02">
-                      <fa name="expand"></fa> Fullscreen
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-lightbox>
-                      <fa name="magnet"></fa> Open in Lightbox
-                    </a>
-                  </li>
-
-                </ul>
-
-              </li>
-              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
-            </ul>
-          </div>
-          <!-- /tile header -->
-
-          <!-- tile body -->
-          <div class="tile-body" ng-controller="FilterUiGridCtrl">
-
-            <div id="grid2" ui-grid="gridOptions" class="grid"></div>
-
-          </div>
-          <!-- /tile body -->
-
-        </section>
-        <!-- /tile -->
-
-
-        <!-- tile -->
-        <section class="tile" fullscreen="isFullscreen04">
-
-          <!-- tile header -->
-          <div class="tile-header dvd dvd-btm">
-            <h1 class="custom-font"><strong>Collumn </strong>Resizing</h1>
-            <ul class="controls">
-              <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
-
-                <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
-
-                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
-                  <li>
-                    <a href tile-control-toggle>
-                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
-                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-refresh ng-click="ajaxFaker()">
-                      <fa name="refresh"></fa> Refresh
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-fullscreen ng-click="isFullscreen04 = !isFullscreen04">
-                      <fa name="expand"></fa> Fullscreen
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-lightbox>
-                      <fa name="magnet"></fa> Open in Lightbox
-                    </a>
-                  </li>
-
-                </ul>
-
-              </li>
-              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
-            </ul>
-          </div>
-          <!-- /tile header -->
-
-          <!-- tile body -->
-          <div class="tile-body" ng-controller="ResizeUiGridCtrl">
-
-            <div id="grid4" ui-grid="gridOptions" class="grid" ui-grid-resize-columns></div>
-
-          </div>
-          <!-- /tile body -->
-
-        </section>
-        <!-- /tile -->
-
-
-        <!-- tile -->
-        <section class="tile" fullscreen="isFullscreen06">
-
-          <!-- tile header -->
-          <div class="tile-header dvd dvd-btm">
-            <h1 class="custom-font"><strong>Collumn</strong> Reordering</h1>
-            <ul class="controls">
-              <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
-
-                <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
-
-                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
-                  <li>
-                    <a href tile-control-toggle>
-                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
-                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-refresh ng-click="ajaxFaker()">
-                      <fa name="refresh"></fa> Refresh
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-fullscreen ng-click="isFullscreen06 = !isFullscreen06">
-                      <fa name="expand"></fa> Fullscreen
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-lightbox>
-                      <fa name="magnet"></fa> Open in Lightbox
-                    </a>
-                  </li>
-
-                </ul>
-
-              </li>
-              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
-            </ul>
-          </div>
-          <!-- /tile header -->
-
-          <!-- tile body -->
-          <div class="tile-body" ng-controller="ReorderUiGridCtrl">
-
-            <div id="grid6" ui-grid="gridOptions" class="grid" ui-grid-move-columns></div>
-
-          </div>
-          <!-- /tile body -->
-
-        </section>
-        <!-- /tile -->
-
-
-      </div>
-      <!-- /col -->
-
-
-
     </div>
     <!-- /row -->
-
-
-
 
 
 
@@ -399,3 +181,23 @@
 
 
 </div>
+<script>
+$('#myCarousel').carousel({
+  interval: 4000
+})
+
+$('.carousel .item').each(function(){
+  var next = $(this).next();
+  if (!next.length) {
+    next = $(this).siblings(':first');
+  }
+  next.children(':first-child').clone().appendTo($(this));
+  
+  if (next.next().length>0) {
+    next.next().children(':first-child').clone().appendTo($(this));
+  }
+  else {
+  	$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+  }
+});
+</script>

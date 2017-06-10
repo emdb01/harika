@@ -1,4 +1,5 @@
-<div class="page page-form-validate">
+
+<div class="page page-form-wizard">
 
 
 
@@ -18,7 +19,7 @@
           <a href="javascript:;">Form Stuff</a>
         </li>
         <li>
-          <a ui-sref="app.forms.validate">{{page.title}}</a>
+          <a ui-sref="app.forms.wizard">{{page.title}}</a>
         </li>
       </ul>
 
@@ -36,709 +37,647 @@
   <div class="pagecontent">
 
 
-    <!-- row -->
-    <div class="row">
+
+    <uib-tabset class="tab-animation tab-container tab-wizard" justified="true" set-ng-animate="true" ng-init="steps={step1:true, step2:false, step3:false, step4:false, step5: false}">
+
+      <uib-tab active="steps.step1">
+
+        <uib-tab-heading>
+          Availability Status
+          <span class="badge badge-default pull-right wizard-step">1</span>
+        </uib-tab-heading>
+
+        <form name="step1" role="form" novalidate class="form-validation">
+
+          <div class="row p-30">
+                          
+                            <div class="col-sm-12 col-md-12 emdb">
+                                <div class="col-xs-4 col-sm-4 col-md-4" style="text-align:center">Available </div>
+						   <div class="col-xs-4 col-md-4" style="text-align:center">On vacation</div>
+						   <div class="col-xs-4 col-md-4" style="text-align:center">No more working with this company</div>
+						   
+						     
+            <center><md-slider flex class="md-warn" md-discrete ng-model="rating2" step="1" min="1" max="3" aria-label="rating" style="width:59%;margin:auto;padding:30px 0px;">
+            </md-slider></center>
+			
+			
+			
+			 
+                            </div>
+
+          <button type="submit" ng-disabled="step1.$invalid" class="btn btn-default" ng-click="steps.step2=true" style="margin-top:20px;background-color: #dedede;float:right">Next</button>
+                        </div>
+
+          
+
+          
 
 
-      <!-- col -->
-      <div class="col-md-6">
+        </form>
 
+      </uib-tab>
 
-        <form name="userForm" ng-submit="submitForm(userForm.$valid)" role="form" novalidate>
+      <uib-tab active="steps.step2">
 
-          <!-- tile -->
-          <section class="tile" fullscreen="isFullscreen01">
+        <uib-tab-heading>
+          Enter Personal Info
+          <span class="badge badge-default pull-right wizard-step">2</span>
+        </uib-tab-heading>
 
-            <!-- tile header -->
-            <div class="tile-header dvd dvd-btm">
-              <h1 class="custom-font"><strong>Disabled</strong> Submit</h1>
-              <ul class="controls">
-                <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
+        <form name="step2" role="form" novalidate>
 
-                  <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+          <div class="row">
 
-                  <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
-                    <li>
-                      <a href tile-control-toggle>
-                        <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
-                        <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href tile-control-refresh ng-click="ajaxFaker()">
-                        <fa name="refresh"></fa> Refresh
-                      </a>
-                    </li>
-                    <li>
-                      <a href tile-control-fullscreen ng-click="isFullscreen01 = !isFullscreen01">
-                        <fa name="expand"></fa> Fullscreen
-                      </a>
-                    </li>
-                    <li>
-                      <a href tile-control-lightbox>
-                        <fa name="magnet"></fa> Open in Lightbox
-                      </a>
-                    </li>
+                      <div class="form-group    col-sm-12  col-md-12">
+						<label for="exampleInputEmail1">Name</label>
+						<div class="row">
+				  <div class="col-xs-4">
+					<input type="text" class="form-control" placeholder="First">
+				  </div>
+				  <div class="col-xs-4">
+					<input type="text" class="form-control" placeholder="Middle">
+				  </div>
+				  <div class="col-xs-4">
+					<input type="text" class="form-control" placeholder="Last">
+				  </div>
+				</div>
+					  </div>
 
-                  </ul>
+                      
 
-                </li>
-                <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
-              </ul>
-            </div>
-            <!-- /tile header -->
+                    
 
-            <!-- tile body -->
-            <div class="tile-body">
+          </div>
 
-              <p class="text-muted">Submit button will be enabled after completing form.</p>
+		  <div class="row">
 
+                      <div class="form-group    col-sm-12  col-md-12">
+						<label for="exampleInputEmail1">Birthday</label>
+						<div class="row">
+						<div class="col-xs-3 col-sm-4">
+					<input type="text" class="form-control" placeholder="Year">
+				  </div>
+						 <div class="col-sm-4 col-xs-5">
+						 <select name="f2" class="form-control mb-10" ng-model="fc2" required>
+                    <option value="">Month</option>
+                    <option>Jan</option>
+				  <option>Feb</option>
+				  <option>March</option>
+				  <option>April</option>
+                  </select>
+					
+				  </div>
+				  <div class="col-sm-4 col-xs-4">
+					<select name="f2" class="form-control mb-10" ng-model="fc2" required>
+                    <option value="">Day</option>
+                    <option value="foo">1</option>
+                    <option value="bar">2</option>
+                  </select>
+				  </div>
+				  
+				  </div>
+					  </div>
 
-              <div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine, 'has-success' : userForm.username.$valid && !userForm.username.$pristine}">
-                <label for="username">Username: </label>
-                <input type="text" name="username" id="username" class="form-control" ng-model="user.username" ng-minlength="3" ng-maxlength="8" required>
-                <p class="help-block">
-                  <span ng-show="userForm.username.$invalid && !userForm.username.$pristine">Username is required.</span>
-                  <span ng-show="userForm.username.$error.minlength">Username is too short.</span>
-                  <span ng-show="userForm.username.$error.maxlength">Username is too long.</span>
-                </p>
+                    </div>
+          <div class="row">
+
+                      <div class="form-group   col-sm-12  col-md-6">
+						<label for="exampleInputPassword1">Gender</label>
+						<div class="row">
+						 <div class="col-sm-12">
+					<select class="form-control">
+				  <option>Select</option>
+				  <option>Male</option>
+				  <option>Female</option> 
+				</select>
+				  </div>
+				  </div>
+					  </div>
+ <div class="form-group  col-sm-12 col-md-6">
+						<label for="exampleInputEmail1">Fax</label>
+						<div class="row">
+				  <div class="col-sm-12">
+					<input  type="text" placeholder="Skype Id" class="form-control" >
+				  </div>
+				   
+				</div>
+					  </div>
+                    </div>
+				 
+					
+					
+					<div class="row form-validation">
+
+                      <div class="form-group col-md-12">
+                <label class="control-label">Email</label>
+                
+                  <input type="email" name="fc11" class="form-control" placeholder="Email" ng-model="fc11" required >
+               
               </div>
 
-              <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine, 'has-success' : userForm.email.$valid && !userForm.email.$pristine}">
-                <label for="email">Email: </label>
-                <input type="email" name="email" id="email" class="form-control" ng-model="user.email" required>
-                <p class="help-block">
-                  <span ng-show="userForm.email.$invalid && !userForm.email.$pristine">Email is required.</span>
-                </p>
-              </div>
-
-              <div class="row">
-
-                <div class="form-group col-md-6" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine, 'has-success' : userForm.password.$valid && !userForm.password.$pristine}">
-                  <label for="password">Password: </label>
+                    </div> 
+ 
+<div class="row form-validation">
+<div class="form-group col-md-6" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine, 'has-success' : userForm.password.$valid && !userForm.password.$pristine}">
+                  <label for="password">New Password </label>
                   <input type="password" name="password" id="password" class="form-control" ng-model="user.password" ng-minlength="6" required>
                   <p class="help-block">
                     <span ng-show="userForm.password.$invalid && !userForm.password.$pristine">Password is required.</span>
                     <span ng-show="userForm.password.$error.minlength">Password is too short.</span>
                   </p>
                 </div>
-
-                <div class="form-group col-md-6" ng-class="{ 'has-error' : userForm.passwordConfirm.$invalid && !userForm.passwordConfirm.$pristine, 'has-success' : userForm.passwordConfirm.$valid && !userForm.passwordConfirm.$pristine}">
-                  <label for="passwordConfirm">Password confirmation: </label>
+                      <div class="form-group col-md-6" ng-class="{ 'has-error' : userForm.passwordConfirm.$invalid && !userForm.passwordConfirm.$pristine, 'has-success' : userForm.passwordConfirm.$valid && !userForm.passwordConfirm.$pristine}">
+                  <label for="passwordConfirm">Confirm Password </label>
                   <input type="password" name="passwordConfirm" id="passwordConfirm" class="form-control" ng-model="user.passwordConfirm" ui-validate=" '$value==user.password' " ui-validate-watch=" 'user.password' " required>
                   <p class="help-block">
                     <span ng-show='userForm.passwordConfirm.$error.validator'>Passwords do not match!</span>
                   </p>
                 </div>
 
-              </div>
+                      
 
+                    </div>
+					
+					<div class="row">
 
-              <div class="form-group" ng-class="{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine, 'has-success' : userForm.phone.$valid && !userForm.phone.$pristine}">
-                <label for="phone">Phone: </label>
+					
+				<div class="form-group col-md-6" ng-class="{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine, 'has-success' : userForm.phone.$valid && !userForm.phone.$pristine}">
+                <label for="phone">Primary Contact Number </label>
+                <input type="text" name="phone" id="phone" class="form-control" ng-model="user.phone" placeholder="(XXX) XXXX XXX" ng-pattern="/\([0-9]{3}\) ([0-9]{3}) ([0-9]{3})$/">
+                <p class="help-block">
+                  <span ng-show="userForm.phone.$invalid && !userForm.phone.$pristine">Phone in bad format.</span>
+                </p>
+              </div>	
+					<div class="form-group col-md-6" ng-class="{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine, 'has-success' : userForm.phone.$valid && !userForm.phone.$pristine}">
+                <label for="phone">Secondary Contact Number </label>
                 <input type="text" name="phone" id="phone" class="form-control" ng-model="user.phone" placeholder="(XXX) XXXX XXX" ng-pattern="/\([0-9]{3}\) ([0-9]{3}) ([0-9]{3})$/">
                 <p class="help-block">
                   <span ng-show="userForm.phone.$invalid && !userForm.phone.$pristine">Phone in bad format.</span>
                 </p>
               </div>
-
-              <div class="checkbox" ng-class="{ 'has-error' : userForm.agree.$invalid && !userForm.agree.$pristine, 'has-success' : userForm.agree.$valid && !userForm.agree.$pristine}">
-                <label class="checkbox checkbox-custom">
-                  <input type="checkbox" name="agree" id="agree" ng-model="user.agree" required><i></i> I agree to the <a href class="text-info">Terms of Service</a>
-                </label>
-                <p class="help-block">
-                  <span ng-show="userForm.agree.$invalid && !userForm.agree.$pristine">You must accept Terms of Service.</span>
-                </p>
-              </div>
-
-
-            </div>
-            <!-- /tile body -->
-
-
-            <!-- tile footer -->
-            <div class="tile-footer text-right bg-tr-black lter dvd dvd-top">
-              <!-- SUBMIT BUTTON -->
-              <button type="submit" class="btn btn-success" ng-disabled="userForm.$invalid">Submit</button>
-            </div>
-            <!-- /tile footer -->
-
-          </section>
-          <!-- /tile -->
-
-
-        </form>
-
-
-
-        <form name="form1" class="form-horizontal" submit-validate ng-submit="submitForm(form1.$valid)" role="form" novalidate>
-
-
-
-          <!-- tile -->
-          <section class="tile" fullscreen="isFullscreen03">
-
-            <!-- tile header -->
-            <div class="tile-header dvd dvd-btm">
-              <h1 class="custom-font"><strong>Basic</strong> Validations</h1>
-              <ul class="controls">
-                <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
-
-                  <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
-
-                  <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
-                    <li>
-                      <a href tile-control-toggle>
-                        <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
-                        <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href tile-control-refresh ng-click="ajaxFaker()">
-                        <fa name="refresh"></fa> Refresh
-                      </a>
-                    </li>
-                    <li>
-                      <a href tile-control-fullscreen ng-click="isFullscreen03 = !isFullscreen03">
-                        <fa name="expand"></fa> Fullscreen
-                      </a>
-                    </li>
-                    <li>
-                      <a href tile-control-lightbox>
-                        <fa name="magnet"></fa> Open in Lightbox
-                      </a>
-                    </li>
-
-                  </ul>
-
-                </li>
-                <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
-              </ul>
-            </div>
-            <!-- /tile header -->
-
-            <!-- tile body -->
-            <div class="tile-body form-validation">
-
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Required</label>
-                <div class="col-sm-9">
-                  <input type="text" name="fc1" class="form-control mb-10" placeholder="Required field" ng-model="fc1" required>
-                  <select name="f2" class="form-control mb-10" ng-model="fc2" required>
-                    <option value="">Select option...</option>
-                    <option value="foo">Foo</option>
-                    <option value="bar">Bar</option>
-                  </select>
-                  <label class="checkbox checkbox-custom">
-                    <input name="fc3" type="checkbox" ng-model="fc3" class="form-control" required><i></i> Agree
-                  </label>
-                </div>
-              </div>
-
-              <hr class="line-dashed line-full" />
-
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Min Length</label>
-                <div class="col-sm-9">
-                  <input type="text" name="fc4" class="form-control" placeholder="minlength = 5" ng-model="fc4" ng-minlength="5" required>
-                </div>
-              </div>
-
-              <hr class="line-dashed line-full" />
-
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Max Length</label>
-                <div class="col-sm-9">
-                  <input type="text" name="fc5" class="form-control" placeholder="maxlength = 5" ng-model="fc5" ng-maxlength="5" required>
-                </div>
-              </div>
-
-              <hr class="line-dashed line-full" />
-
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Length Range</label>
-                <div class="col-sm-9">
-                  <input type="text" name="fc6" class="form-control" placeholder="minlength = 5 & maxlength = 10" ng-model="fc6" ng-minlength="5" ng-maxlength="10" required>
-                </div>
-              </div>
-
-              <hr class="line-dashed line-full" />
-
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Min value</label>
-                <div class="col-sm-9">
-                  <input type="number" name="fc7" class="form-control" placeholder="min = 8" ng-model="fc7" ui-validate=" '$value >= 8' " required>
-                </div>
-              </div>
-
-              <hr class="line-dashed line-full" />
-
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Max value</label>
-                <div class="col-sm-9">
-                  <input type="number" name="fc8" class="form-control" placeholder="max = 8" ng-model="fc8" ui-validate=" '$value <= 8' " required>
-                </div>
-              </div>
-
-              <hr class="line-dashed line-full" />
-
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Value Range</label>
-                <div class="col-sm-9">
-                  <input type="number" name="fc9" class="form-control" placeholder="min = 8 & max = 20" ng-model="fc9" ui-validate=" { a:'$value >= 8', b:'$value <= 20' } " required>
-                </div>
-              </div>
-
-              <hr class="line-dashed line-full" />
-
-              <div class="form-group">
-                <label class="col-sm-3 control-label">HEX Regex</label>
-                <div class="col-sm-9">
-                  <input type="text" name="fc10" class="form-control" placeholder="#ffffff" ng-model="fc10"  ng-pattern="/^#(?:[0-9a-fA-F]{3}){1,2}$/" required>
-                </div>
-              </div>
-
-
-            </div>
-            <!-- /tile body -->
-
-            <!-- tile footer -->
-            <div class="tile-footer text-right bg-tr-black lter dvd dvd-top">
-              <!-- SUBMIT BUTTON -->
-              <button type="submit" class="btn btn-default">Submit</button>
-            </div>
-            <!-- /tile footer -->
-
-          </section>
-          <!-- /tile -->
-
-
-        </form>
-
-
-      </div>
-      <!-- /col -->
-
-
-
-      <!-- col -->
-      <div class="col-md-6">
-
-        <form name="contactForm" submit-validate ng-submit="submitForm(contactForm.$valid)" role="form" novalidate>
-
-
-          <!-- tile -->
-          <section class="tile" fullscreen="isFullscreen02">
-
-            <!-- tile header -->
-            <div class="tile-header dvd dvd-btm">
-              <h1 class="custom-font"><strong>OnBlur</strong> Validate</h1>
-              <ul class="controls">
-                <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
-
-                  <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
-
-                  <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
-                    <li>
-                      <a href tile-control-toggle>
-                        <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
-                        <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href tile-control-refresh ng-click="ajaxFaker()">
-                        <fa name="refresh"></fa> Refresh
-                      </a>
-                    </li>
-                    <li>
-                      <a href tile-control-fullscreen ng-click="isFullscreen02 = !isFullscreen02">
-                        <fa name="expand"></fa> Fullscreen
-                      </a>
-                    </li>
-                    <li>
-                      <a href tile-control-lightbox>
-                        <fa name="magnet"></fa> Open in Lightbox
-                      </a>
-                    </li>
-
-                  </ul>
-
-                </li>
-                <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
-              </ul>
-            </div>
-            <!-- /tile header -->
-
-            <!-- tile body -->
-            <div class="tile-body">
-
-              <p class="text-muted">Inputs in this form validate on blur.</p>
-
-              <div class="row">
-
-                <div class="form-group col-md-6 mb-0" ng-class="{ 'has-error' : contactForm.name.$invalid && !contactForm.name.$pristine, 'has-success' : contactForm.name.$valid && !contactForm.name.$pristine}">
-                  <label for="name">Name: </label>
-                  <input type="text" name="name" id="name" class="form-control" ng-model="user.name" on-blur-validation required>
-                  <p class="help-block">
-                    <span ng-show="contactForm.name.$invalid && !contactForm.name.$pristine">Name is required.</span>
-                  </p>
-                </div>
-
-                <div class="form-group col-md-6 mb-0" ng-class="{ 'has-error' : contactForm.contactemail.$invalid && !contactForm.contactemail.$pristine || contactForm.contactemail.$invalid && submitted, 'has-success' : contactForm.contactemail.$valid && !contactForm.contactemail.$pristine || contactForm.contactemail.$valid && submitted}">
-                  <label for="contactemail">Email: </label>
-                  <input type="email" name="contactemail" id="contactemail" class="form-control" ng-model="user.contactemail" on-blur-validation>
-                  <p class="help-block">
-                    <span ng-show="contactForm.contactemail.$invalid && !contactForm.contactemail.$pristine || contactForm.contactemail.$invalid && submitted">Email in bad format.</span>
-                  </p>
-                </div>
-
-              </div>
-
-              <div class="form-group" ng-class="{ 'has-error' : contactForm.website.$invalid && !contactForm.website.$pristine || contactForm.website.$invalid && submitted, 'has-success' : contactForm.website.$valid && !contactForm.website.$pristine || contactForm.website.$valid && submitted}">
-                <label for="website">Website: </label>
-                <input type="text" name="website" id="website" class="form-control" ng-model="user.website" placeholder="http://" ng-pattern="/(https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,})/" on-blur-validation>
-                <p class="help-block">
-                  <span ng-show="contactForm.website.$invalid && !contactForm.website.$pristine || contactForm.website.$invalid && submitted">Website in bad format.</span>
-                </p>
-              </div>
-
-              <div class="form-group" ng-class="{ 'has-error' : contactForm.message.$invalid && !contactForm.message.$pristine || contactForm.message.$invalid && submitted, 'has-success' : contactForm.message.$valid && !contactForm.message.$pristine || contactForm.message.$valid && submitted}">
-                <label for="message">Message: </label>
-                <textarea class="form-control" rows="7" name="message" id="message" placeholder="Type your message" ng-model="user.message"  on-blur-validation required></textarea>
-                <p class="help-block">
-                  <span ng-show="contactForm.message.$invalid && !contactForm.message.$pristine || contactForm.message.$invalid && submitted">Message is required.</span>
-                </p>
-              </div>
-
-
-            </div>
-            <!-- /tile body -->
-
-            <!-- tile footer -->
-            <div class="tile-footer text-right bg-tr-black lter dvd dvd-top">
-              <!-- SUBMIT BUTTON -->
-              <button type="submit" class="btn btn-lightred">Submit</button>
-            </div>
-            <!-- /tile footer -->
-
-          </section>
-          <!-- /tile -->
-
-
-        </form>
-
-
-
-        <form name="form2" class="form-horizontal" submit-validate ng-submit="submitForm(form2.$valid)" role="form" novalidate>
-
-          <!-- tile -->
-          <section class="tile" fullscreen="isFullscreen04">
-
-            <!-- tile header -->
-            <div class="tile-header dvd dvd-btm">
-              <h1 class="custom-font"><strong>Type </strong>Validations</h1>
-              <ul class="controls">
-                <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
-
-                  <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
-
-                  <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
-                    <li>
-                      <a href tile-control-toggle>
-                        <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
-                        <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href tile-control-refresh ng-click="ajaxFaker()">
-                        <fa name="refresh"></fa> Refresh
-                      </a>
-                    </li>
-                    <li>
-                      <a href tile-control-fullscreen ng-click="isFullscreen04 = !isFullscreen04">
-                        <fa name="expand"></fa> Fullscreen
-                      </a>
-                    </li>
-                    <li>
-                      <a href tile-control-lightbox>
-                        <fa name="magnet"></fa> Open in Lightbox
-                      </a>
-                    </li>
-
-                  </ul>
-
-                </li>
-                <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
-              </ul>
-            </div>
-            <!-- /tile header -->
-
-            <!-- tile body -->
-            <div class="tile-body form-validation">
-
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Email</label>
-                <div class="col-sm-9">
-                  <input type="email" name="fc11" class="form-control" placeholder="Email" ng-model="fc11" required >
-                </div>
-              </div>
-
-              <hr class="line-dashed line-full" />
-
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Url</label>
-                <div class="col-sm-9">
-                  <input type="url" name="fc12" class="form-control" placeholder="http://" ng-model="fc12" required >
-                </div>
-              </div>
-
-              <hr class="line-dashed line-full" />
-
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Digits</label>
-                <div class="col-sm-9">
-                  <input type="text" name="fc13" class="form-control" placeholder="Digits" ng-pattern="/^[0-9]+$/" ng-model="fc13" required >
-                </div>
-              </div>
-
-              <hr class="line-dashed line-full" />
-
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Numbers</label>
-                <div class="col-sm-9">
-                  <input type="number" name="fc14" class="form-control" placeholder="Number" ng-model="fc14" required >
-                </div>
-              </div>
-
-              <hr class="line-dashed line-full" />
-
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Alphanumeric</label>
-                <div class="col-sm-9">
-                  <input type="text" name="fc15" class="form-control" placeholder="Alphanumeric" ng-model="fc15" ng-pattern="/^([A-Za-z]|[0-9]|\s)+$/" required >
-                </div>
-              </div>
-
-              <hr class="line-dashed line-full" />
-
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Alpha</label>
-                <div class="col-sm-9">
-                  <input type="text" name="fc16" class="form-control" placeholder="Alpha" ng-model="fc16" ng-pattern="/^[a-zA-Z]+$/" required >
-                </div>
-              </div>
-
-              <hr class="line-dashed line-full" />
-
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Date ISO</label>
-                <div class="col-sm-9">
-                  <input type="text" name="fc17" class="form-control" placeholder="YYYY-MM-DD" ng-model="fc17" ng-pattern="/[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])$/" required >
-                </div>
-              </div>
-
-              <hr class="line-dashed line-full" />
-
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Phone</label>
-                <div class="col-sm-9">
-                  <input type="text" name="fc18" class="form-control" placeholder="(XXX) XXXX XXX" ng-model="fc18" ng-pattern="/\([0-9]{3}\) ([0-9]{3}) ([0-9]{3})$/" required >
-                </div>
-              </div>
-
-              <hr class="line-dashed line-full" />
-
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Equal</label>
-                <div class="col-sm-9">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <input type="text" name="fc19" class="form-control" ng-model="fc19" required >
+					
+					
+					
                     </div>
-                    <div class="col-md-6">
-                      <input type="text" name="fc20" class="form-control" ng-model="fc20" ui-validate=" '$value==fc19' " ui-validate-watch=" 'fc19' " required >
-                      <span ng-show='form1.fc20.$error.validator'>Not match!</span>
+					
+					<div class="row">
+
+                      <div class="form-group    col-sm-12  col-md-12">
+						<label for="exampleInputFile">Picture</label>
+						</br>
+						<img src="default.jpg" style="width:120px">
+						
+						 
+					  </div>
+ 
                     </div>
-                  </div>
-
-                </div>
-              </div>
-
-              <hr class="line-dashed line-full" />
-
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Blacklist</label>
-                <div class="col-sm-9">
-                  <input type="email" name="fc21" class="form-control" placeholder="type 'bad@domain.com'" ng-model="fc21" ui-validate="{blacklist : 'notBlackListed($value)' }" required >
-                  <span ng-show='form2.fc21.$error.blacklist'>This e-mail is in blacklist!</span>
-                </div>
-              </div>
-
-            </div>
-            <!-- /tile body -->
-
-            <!-- tile footer -->
-            <div class="tile-footer text-right bg-tr-black lter dvd dvd-top">
-              <!-- SUBMIT BUTTON -->
-              <button type="submit" class="btn btn-default">Submit</button>
-            </div>
-            <!-- /tile footer -->
-
-          </section>
-          <!-- /tile -->
+          <button type="submit" class="btn btn-default" ng-click="steps.step1=true" style="background-color: #dedede;">Previous</button>
+          <button type="submit"  class="btn btn-default pull-right" ng-click="steps.step3=true" style="background-color: #dedede;">Next</button>
 
         </form>
 
+      </uib-tab>
 
+      <uib-tab active="steps.step3">
 
-      </div>
-      <!-- /col -->
+        <uib-tab-heading>
+          Enter Address Info
+          <span class="badge badge-default pull-right wizard-step">3</span>
+        </uib-tab-heading>
 
+        <form name="step3" role="form" novalidate>
 
+         
+          <div class="row">
+            
+            
+            <div class="tile-body col-sm-12  col-md-12">
 
-    </div>
-    <!-- /row -->
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td class="col-xs-1  col-md-1" style="text-align:center;border-top:none;padding: 20px 0px;
+    font-size: 17px;">
+                <i class="glyphicon glyphicon-home"></i>
+              </td>
+                  <td class="col-xs-7  col-md-8"  style="padding:20px 10px;border-top:none"><p>920, Holcomb Bridge Road, Suite # 410, Roswell, GA 30076920, Holcomb Bridge Road, Suite # 410, Roswell, GA 30076920, Holcomb Bridge Road, Suite # 410, Roswell, GA 30076</p></td>
+                  <td class="col-xs-3  col-md-2" style="text-align:center;border-top:none;padding:20px 0px;"><label class="radio checkbox-custom checkbox-custom-sm" style="margin-top: 0px;margin-bottom: 0px;">
+                      <input type="radio" ng-model="options.position" value="toast-top-right"><i></i> Default
+                    </label> </td>
+                  <td class="col-xs-1  col-md-1" style="text-align:center;border-top:none;padding: 20px 0px;
+    font-size: 17px;">
+                <center><a href tile-control-close><i class="fa fa-times"></i></a></center>
+             </td>
+                </tr>
+                
+              </tbody>
+            </table>
 
-    <!-- row -->
-    <div class="row">
-      <!-- col -->
-      <div class="col-md-12">
+          </div>
+             
+			<div style="border-top:1px solid #ccc;clear:both;padding:0px 0px 0px;"></div>
+			
+			<div class="tile-body">
+			<div class="table-responsive" style="border: none;">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td rowspan="5" class="" width="30%" style="text-align:left; border-top: none;   vertical-align: middle;"> 
 
-        <!-- tile -->
-          <section class="tile" fullscreen="isFullscreen05">
+						  <select class="form-control">
+				  <option>Home</option>
+				  <option>Office</option>
+				  <option>Office 2</option> 
+				</select> </td>
+                    <td colspan="2" width="70%" style="border-top: none;padding-left: 15px;"><label for="exampleInputPassword1">Address First Line</label>
+					<input type="text" class="form-control col-xs-12" placeholder="Address First Line">
+					</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" width="70%" style="border-top: none;"><label for="exampleInputPassword1">Address Second Line</label>
+					<input type="text" class="form-control col-xs-12" placeholder="Address Second Line"></td>
+                  </tr>
+                  <tr>
+                    <td width="40%" style="border-top: none;"><label>City</label>
+						 
+					<input type="text" class="form-control" placeholder="Type City">
+				
+						 
+				</td>
+                    <td width="40%" style="border-top: none;"><label>State</label>
+						
+					<select class="form-control">
+				  <option>AP</option>
+				  <option>Telangana</option>
+				  <option>Delhi</option> 
+				</select>
+				 </td>
+                  </tr>
+				  
+				  
+				  <tr>
+                    <td style="border-top: none;"><label>Zip Code</label>
+						 
+					<input type="text" class="form-control" placeholder="Enter Zip Code">
+				
+						 
+				</td>
+                    <td style="border-top: none;"><label>Country</label>
+						
+					<select class="form-control">
+				  <option>India</option>
+				  <option>USA</option>
+				  <option>Sri lanka</option> 
+				</select>
+				 </td>
+                  </tr>
+				  
+				  
+				  
+                </tbody>
+              </table>
+			  <div class="form-group    col-sm-12  col-md-12">
+                      <button type="button" class="btn btn-primary btn-xs" style="float:right;background:#34495E">Add</button>
 
-            <!-- tile header -->
-            <div class="tile-header dvd dvd-btm">
-              <h1 class="custom-font"><strong>Input </strong>Mask</h1>
-              <ul class="controls">
-                <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
-
-                  <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
-
-                  <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
-                    <li>
-                      <a href tile-control-toggle>
-                        <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
-                        <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href tile-control-refresh ng-click="ajaxFaker()">
-                        <fa name="refresh"></fa> Refresh
-                      </a>
-                    </li>
-                    <li>
-                      <a href tile-control-fullscreen ng-click="isFullscreen05 = !isFullscreen05">
-                        <fa name="expand"></fa> Fullscreen
-                      </a>
-                    </li>
-                    <li>
-                      <a href tile-control-lightbox>
-                        <fa name="magnet"></fa> Open in Lightbox
-                      </a>
-                    </li>
-
-                  </ul>
-
-                </li>
-                <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
-              </ul>
+                    </div>
             </div>
-            <!-- /tile header -->
+          </div>
+          </div>
 
-            <!-- tile body -->
-            <div class="tile-body">
+         
+         
 
-              <form class="form-horizontal" role="form">
+          <button type="submit" class="btn btn-default" ng-click="steps.step2=true" style="background-color: #dedede;">Previous</button>
+          <button type="submit"  class="btn btn-default pull-right" ng-click="steps.step4=true" style="background-color: #dedede;">Next</button>
 
-                <div class="form-group">
-                  <label for="mask01" class="col-sm-2 control-label">Date:</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="mask01" ui-jq="inputmask" ui-options="{alias: 'date'}">
-                    <p class="help-block">dd/mm/yyyy</p>
-                  </div>
-                </div>
+        </form>
+      </uib-tab>
 
-                <hr class="line-dashed line-full"/>
+      <uib-tab active="steps.step4" disable="step3.$invalid">
 
-                <div class="form-group">
-                  <label for="mask02" class="col-sm-2 control-label">Date:</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="mask02" ui-jq="inputmask" ui-options="{alias: 'mm/dd/yyyy'}">
-                    <p class="help-block">mm/dd/yyyy</p>
-                  </div>
-                </div>
+        <uib-tab-heading>
+          Enter Education Info
+          <span class="badge badge-default pull-right wizard-step">4</span>
+        </uib-tab-heading>
+<div class="tile-body col-sm-12  col-md-12">
 
-                <hr class="line-dashed line-full"/>
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td class="col-sm-1  col-md-1" style="border-top:none;padding: 20px 0px;
+    ">
+                <strong>2012</strong></i>
+              </td>
+                  <td class="col-sm-7  col-md-7" style="border-top:none;padding:20px 10px;"><strong>920, Holcomb Bridge Road, Suite # 410, Roswell, GA 30076920, Holcomb Bridge Road, Suite # 410, Roswell, GA 30076920, Holcomb Bridge Road, Suite # 410, Roswell, GA 30076</strong></td>
+                 
+                  <td class="col-xs-3  col-md-2" style="text-align:center;border-top:none;padding:20px 0px;"><label class="radio checkbox-custom checkbox-custom-sm" style="margin-top: 0px;margin-bottom: 0px;">
+                      <input type="radio" ng-model="options.position" value="toast-top-right"><i></i> Default
+                    </label> </td>
+                  <td class="col-xs-1  col-md-1" style="text-align:center;border-top:none;padding: 20px 0px;
+    font-size: 17px;">
+                <center><a href tile-control-close><i class="fa fa-times"></i></a></center>
+             </td>
+                </tr>
+                
+              </tbody>
+            </table>
 
-                <div class="form-group">
-                  <label for="mask03" class="col-sm-2 control-label">Currency:</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="mask03" ui-jq="inputmask" ui-options="{'alias': 'numeric', 'groupSeparator': ',', 'autoGroup': true, 'digits': 2, 'digitsOptional': false, 'prefix': '$ ', 'placeholder': '0'}">
-                  </div>
-                </div>
+          </div>
+		  <div style="border-top:1px solid #ccc;clear:both;padding:30px 0px;"></div>
+		  
+        <form name="step4" role="form" novalidate>
 
-                <hr class="line-dashed line-full"/>
-
-                <div class="form-group">
-                  <label for="mask04" class="col-sm-2 control-label">License Plate:</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="mask04" ui-jq="inputmask" ui-options="{'mask': '[9-]AAA-999'}">
-                    <p class="help-block">[9-]AAA-999</p>
-                  </div>
-                </div>
-
-                <hr class="line-dashed line-full"/>
-
-                <div class="form-group">
-                  <label for="mask05" class="col-sm-2 control-label">Decimal:</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="mask05" ui-jq="inputmask" ui-options="{'alias': 'decimal', 'groupSeparator': ',', 'autoGroup': true}">
-                    <p class="help-block">Group separator: ,<br/> RadixPoint: .</p>
-                  </div>
-                </div>
-
-                <hr class="line-dashed line-full"/>
-
-                <div class="form-group">
-                  <label for="mask06" class="col-sm-2 control-label">Phone:</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="mask06" ui-jq="inputmask" ui-options="{'mask': '+1(###)###-####'}">
-                  </div>
-                </div>
-
-                <hr class="line-dashed line-full"/>
-
-                <div class="form-group">
-                  <label for="mask07" class="col-sm-2 control-label">IP Address:</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="mask07" ui-jq="inputmask" ui-options="{'alias': 'ip'}">
-                  </div>
-                </div>
-
-                <hr class="line-dashed line-full"/>
-
-                <div class="form-group">
-                  <label for="mask08" class="col-sm-2 control-label">Email:</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="mask08" ui-jq="inputmask" ui-options="{'alias': 'email'}">
-                  </div>
-                </div>
-
-                <hr class="line-dashed line-full"/>
-
-              </form>
-
+          <div class="row">
+            <div class="form-group col-md-6 mb-0">
+              <label for="">Degree </label>
+              <select class="form-control">
+				  <option>Select</option>
+				  <option>Computer Science</option>
+				  <option>ECE</option> 
+				</select>
+               <p class="help-block">
+                <span ng-show="step4.email.$invalid && !step4.email.$pristine">Email is required.</span>
+               </p>
             </div>
-            <!-- /tile body -->
+            <div class="form-group col-md-6 mb-0">
+              <label for="phone">University </label>
+             <select class="form-control">
+				  <option>Select</option>
+				  <option>University of USA</option>
+				  <option>University of Texas</option> 
+				</select>
+               <p class="help-block">
+                <span ng-show="step4.phone.$invalid && !step4.phone.$pristine">Bad format.</span>
+               </p>
+            </div>
+          </div>
 
-          </section>
-          <!-- /tile -->
+          <div class="row">
+            
+            <div class="form-group col-md-6 mb-0">
+              <label for="phone">Passout </label>
+             <select class="form-control">
+				  <option>2012</option>
+				  <option>2011</option>
+				  <option>2010</option> 
+				</select>
+               <p class="help-block">
+                <span ng-show="step4.phone.$invalid && !step4.phone.$pristine">Bad format.</span>
+               </p>
+            </div>
+          </div> 
+          <button type="submit" class="btn btn-default" ng-click="steps.step3=true" style="background-color: #dedede;">Previous</button>
+          <button type="submit" ng-disabled="step4.$invalid" class="btn btn-default pull-right" ng-click="steps.step5=true" style="background-color: #dedede;">Next</button>
 
-      </div>
-      <!-- /col -->
-    </div>
-    <!-- /row -->
+        </form>
+      </uib-tab>
+
+      <uib-tab active="steps.step5" disable="step4.$invalid">
+
+        <uib-tab-heading>
+          Enter Avtar Info
+          <span class="pull-right wizard-step">5</span>
+        </uib-tab-heading>
+		<div style="padding-bottom:20px;">
+
+        <div class="tile-body">
+<div class="">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td class="col-xs-1 col-sm-1 col-md-1" style="border-top:none;padding: 20px 0px;
+    ">
+                <strong>Company Name</strong>
+              </td>
+                  <td class="col-xs-7 col-sm-7 col-md-8" style="border-top:none;padding:20px 10px;"><strong>University of hyderabad.University of hyderabad.500060University of hyderabad.500060University of hyderabad.500060</strong></td>
+                 <td class="col-xs-3 col-sm-3 col-md-2" style="text-align:center;border-top:none;padding:20px 0px;"><label class="radio checkbox-custom checkbox-custom-sm" style="margin-top: 0px;margin-bottom: 0px;">
+                      <input type="radio" ng-model="options.position" value="toast-top-right"><i></i> Default
+                    </label> </td>
+                  <td class="col-xs-1 col-sm-1 col-md-1" style="text-align:center;border-top:none;padding: 20px 0px;
+    font-size: 17px;">
+                <center><a href tile-control-close><i class="fa fa-times"></i></a></center>
+             </td>
+                  
+                </tr>
+                 <tr>
+                  <td style="padding: 20px 0px;
+    border-top:none">
+                <strong>Skill</strong>
+              </td>
+                  <td  style="padding:20px 10px;border-top:none"><strong>University of hyderabad.500060University of hyderabad.</strong></td>
+                 
+                 
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          </div>
+		  <div class="tile-body">
+<div class="">
+<table class="table">
+
+<tbody>
+<tr><th class="" style="vertical-align: middle;width: 30%;border-top:none"></th>
+				  <th class="" style="vertical-align: middle;width: 30%;border-top:none"></th>
+				  <th class="" style="text-align:center;width: 20%;vertical-align: middle;border-top:none"><label><strong>Delete</strong></label></th>
+				  <th class="" style="text-align:center;width: 20%;vertical-align: middle;border-top:none"><label><strong>Default</strong></label></th>
+				   
+				</tr>
+
+
+
+
+				   <tr>
+				  <td class="" rowspan="3" style="vertical-align: middle;    padding-left: 0px; border-top:none"><label><strong>Documents</strong></label></td>
+				  <td style="padding-left: 0px;border-top:none">University </td>
+				  <td class="" style="border-top:none;text-align:center"><input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+   
+                 </td>
+				  
+				  <td class="" style="border-top:none;text-align:center"> <i class="glyphicon glyphicon-trash"></i></td>
+				  
+				</tr>
+				   <tr>
+				 
+				  <td style="padding-left: 0px;border-top:none">University </td>
+				  <td class="" style="border-top:none;text-align:center"><input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+   
+        </td>
+				  
+				  <td class="" style="border-top:none;text-align:center"> <i class="glyphicon glyphicon-trash"></i></td>
+				  
+				</tr>
+				<tr>
+				  
+				  <td style="padding-left: 0px;border-top:none">University </td>
+				  <td class="" style="border-top:none;text-align:center"><input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+   
+              </td>
+				  
+				  <td class="" style="border-top:none;text-align:center"> <i class="glyphicon glyphicon-trash"></i></td>
+				  
+				</tr>
+				
+				</tbody>
+				</table></div>
+          </div></div>
+		  <div style="border-top:1px solid #ccc;clear:both;padding:0px 0px 0px;"></div>
+        <form name="step5" role="form" novalidate>
+
+		
+		<div class="form-group" style="margin-top:30px">
+						<label for="exampleInputEmail1">Company Name</label>
+						<div class="row">
+				  <div class="col-sm-8   col-md-9">
+				  <select class="form-control">
+				  <option>Select Company Name</option>
+				  <option>Name 2</option>
+				  <option>Other</option> 
+				</select>
+				
+					
+				  </div>
+				   <div class="col-sm-8   col-md-9" style="margin-top:20px;">
+				   <input type="text" class="form-control" placeholder="Other">
+				    </div>
+				</div>
+					  </div>
+		
+		
+          <div class="form-group" style="margin-top:30px">
+						<label for="exampleInputEmail1">Company Website</label>
+						<div class="row">
+				  <div class="col-sm-8   col-md-9">
+					<input type="text" class="form-control" placeholder="Enter Url">
+				  </div>
+				   
+				    
+				</div>
+					  </div>
+					  
+					  
+					  
+					 <div class="form-group" style="margin-top:30px">
+						<label for="exampleInputEmail1">About Company </label>
+						<div class="row">
+				  <div class="col-sm-8   col-md-9">
+					<textarea type="text"   class="form-control" placeholder="Enter Url"></textarea>
+				  </div>
+				   
+				    
+				</div>
+					  </div> 
+					  
+					  
+					  
+					  
+					  
+			 	  
+					  
+					  
+					  
+					  
+					  
+					  
+
+          
+
+        </form>
+
+		
+		<div class="tile-body">
+<div class="">
+            <table class="table">
+              <tbody>
+                <tr><th class="" style="    padding-left: 0px;vertical-align: middle;border-top:none">Documents</th>
+				   
+				  <th class="" style="text-align:center;vertical-align: middle;border-top:none"><label>Delete</label></th>
+				  <th class="" style="text-align:center;vertical-align: middle;border-top:none"><label>Default</label></th>
+				   
+				</tr>
+                <tr>
+				  
+				  <td class="" style="padding-left: 0px;border-top:none">Resume-harika.pdf </td>
+				  <td class="" style="border-top:none;text-align:center"> <i class="glyphicon glyphicon-trash"></i></td>
+				  
+				  <td class="" style="border-top:none;text-align:center"><input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"></td>
+				  
+				</tr>
+				
+				<tr>
+				  
+				  <td class="" style="padding-left: 0px;border-top:none">Resume-harika.pdf </td>
+				  <td class="" style="border-top:none;text-align:center"> <i class="glyphicon glyphicon-trash"></i></td>
+				  
+				  <td class="" style="border-top:none;text-align:center"><input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"></td>
+				  
+				</tr>
+				<tr>
+				  
+				  <td class="" style="padding-left: 0px;border-top:none">Resume-harika.pdf </td>
+				  <td class="" style="border-top:none;text-align:center"> <i class="glyphicon glyphicon-trash"></i></td>
+				  
+				  <td class="" style="border-top:none;text-align:center"><input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"></td>
+				  
+				</tr>
+              </tbody>
+            </table>
+			<div class="">
+<button type="button" class="btn btn-slategray mb-10">Upload Additional Documents <i class="fa fa-upload" style=""></i></button>
+
+         
+          </div>
+          </div>
+          </div>
+		  
+			
+		  <div class="tile-body" style="margin-top:20px;">
+<div class="">
+            <table class="table">
+              <tbody>
+                <tr><th class="col-xs-8 col-sm-8 col-md-5" style="padding-left: 0px;vertical-align: middle;border-top:none">Certificates</th>
+				   
+				  <th class="col-xs-2 col-sm-2 col-md-2" style="text-align:center;vertical-align: middle;border-top:none"><label>Delete</label></th>
+				   
+				   
+				</tr>
+                <tr>
+				  
+				  <td class="" style="padding-left: 0px;border-top:none">ITL </td>
+				  <td class="" style="border-top:none;text-align:center"> <i class="glyphicon glyphicon-trash"></i></td>
+				  
+			 
+				</tr>
+				
+			 
+              </tbody>
+            </table>
+			<div class="form-group">
+			<div class="col-md-9 col-xs-8 col-sm-8" style="padding-left: 0px;">
+                  <select class="form-control">
+				  <option>Certificates 1</option>
+				  <option>Certificates 2</option>
+				  <option>Certificates 3</option> 
+				</select>
+                </div>	 
+
+<div class="col-md-3 col-xs-4 col-sm-4">
+<button type="button" class="btn btn-primary btn-xs" style="background:#34495E">Add</button>
+				
+					  
+          </div>
+          </div>
+		  </br>
+		  <div style="display:block;margin-top:30px;">
+		  
+          <button type="submit" class="btn btn-default" ng-click="steps.step4=true" style="background-color: #dedede;">Previous</button>
+          <button type="submit" ng-disabled="step5.$invalid" class="btn btn-success pull-right" style="background:#58D68D">Save</button>
+
+      </uib-tab>
+
+    </uib-tabset>
+
 
 
 
@@ -748,4 +687,5 @@
 
 
 
+</div>
 </div>

@@ -1,3 +1,8 @@
+ 
+
+
+
+
 <div class="page page-form-wizard">
 
 
@@ -42,16 +47,14 @@
       <uib-tab active="steps.step1">
 
         <uib-tab-heading>
-          Select Availability Status
+          Availability Status
           <span class="badge badge-default pull-right wizard-step">1</span>
         </uib-tab-heading>
 
         <form name="step1" role="form" novalidate class="form-validation">
 
           <div class="row p-30">
-                            <div class="col-sm-2 col-md-2">
-                                 
-                            </div>
+                          
                             <div class="col-sm-12 col-md-12 emdb">
                                 <div class="col-xs-4 col-sm-4 col-md-4" style="text-align:center">Available Now</div>
 						   <div class="col-xs-4 col-md-4" style="text-align:center">Shopping around</div>
@@ -60,17 +63,19 @@
 						     
             <center><md-slider flex class="md-warn" md-discrete ng-model="rating2" step="1" min="1" max="3" aria-label="rating" style="width:59%;margin:auto;padding:30px 0px;">
             </md-slider></center>
+			
+			
+			
+			 
                             </div>
-							<div class="col-sm-2 col-md-2">
-                                 
-                            </div>
+
+          <button type="submit" ng-disabled="step1.$invalid" class="btn btn-default" ng-click="steps.step2=true" style="margin-top:20px;background-color: #dedede;float:right">Next</button>
                         </div>
 
           
 
           
 
-          <button type="submit" ng-disabled="step1.$invalid" class="btn btn-default" ng-click="steps.step2=true" style="background-color: #dedede;">Next</button>
 
         </form>
 
@@ -113,9 +118,12 @@
                       <div class="form-group    col-sm-12  col-md-12">
 						<label for="exampleInputEmail1">Birthday</label>
 						<div class="row">
+						<div class="col-xs-3 col-sm-4">
+					<input type="text" class="form-control" placeholder="Year">
+				  </div>
 						 <div class="col-sm-4 col-xs-5">
 						 <select name="f2" class="form-control mb-10" ng-model="fc2" required>
-                    <option value="">Month</option>
+                    <option disable hidden value="">Month</option>
                     <option>Jan</option>
 				  <option>Feb</option>
 				  <option>March</option>
@@ -130,16 +138,14 @@
                     <option value="bar">2</option>
                   </select>
 				  </div>
-				  <div class="col-xs-3 col-sm-4">
-					<input type="text" class="form-control" placeholder="Year">
-				  </div>
+				  
 				  </div>
 					  </div>
 
                     </div>
           <div class="row">
 
-                      <div class="form-group   col-sm-12  col-md-12">
+                      <div class="form-group   col-sm-12  col-md-6">
 						<label for="exampleInputPassword1">Gender</label>
 						<div class="row">
 						 <div class="col-sm-12">
@@ -151,8 +157,30 @@
 				  </div>
 				  </div>
 					  </div>
-
+ <div class="form-group  col-sm-12 col-md-6">
+						<label for="exampleInputEmail1">Skype Id</label>
+						<div class="row">
+				  <div class="col-sm-12">
+					<input  type="text" placeholder="Skype Id" class="form-control" >
+				  </div>
+				   
+				</div>
+					  </div>
                     </div>
+				 
+					
+					
+					<div class="row form-validation">
+
+                      <div class="form-group col-md-12">
+                <label class="control-label">Email</label>
+                
+                  <input type="email" name="fc11" class="form-control" placeholder="Email" ng-model="fc11" required >
+               
+              </div>
+
+                    </div> 
+ 
 <div class="row form-validation">
 <div class="form-group col-md-6" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine, 'has-success' : userForm.password.$valid && !userForm.password.$pristine}">
                   <label for="password">New Password </label>
@@ -195,39 +223,17 @@
 					
 					
                     </div>
-					<div class="row form-validation">
-
-                      <div class="form-group col-md-6">
-                <label class="control-label">Email</label>
-                
-                  <input type="email" name="fc11" class="form-control" placeholder="Email" ng-model="fc11" required >
-               
-              </div>
-
-                      <div class="form-group  col-sm-12 col-md-6">
-						<label for="exampleInputEmail1">Skype Id</label>
-						<div class="row">
-				  <div class="col-sm-12">
-					<input  type="text" placeholder="Skype Id" class="form-control" >
-				  </div>
-				   
-				</div>
-					  </div>
-
-                    </div>
+					
 					<div class="row">
 
                       <div class="form-group    col-sm-12  col-md-12">
-						<label for="exampleInputFile">Profile</label>
+						<label for="exampleInputFile">Picture</label>
 						</br>
 						<img src="default.jpg" style="width:120px">
 						
 						 
 					  </div>
-<div class="form-group    col-sm-12  col-md-12">
-                      <button type="button" class="btn btn-primary btn-xs">Submit</button>
-
-                    </div>
+ 
                     </div>
           <button type="submit" class="btn btn-default" ng-click="steps.step1=true" style="background-color: #dedede;">Previous</button>
           <button type="submit"  class="btn btn-default pull-right" ng-click="steps.step3=true" style="background-color: #dedede;">Next</button>
@@ -287,12 +293,12 @@
 				  <option>Office</option>
 				  <option>Office 2</option> 
 				</select> </td>
-                    <td colspan="2" width="70%" style="border-top: none;"><label for="exampleInputPassword1">Address First Line</label>
+                    <td colspan="2" width="70%" style="border-top: none;padding-left: 15px;"><label for="exampleInputPassword1">Address First Line</label>
 					<input type="text" class="form-control col-xs-12" placeholder="Address First Line">
 					</td>
                   </tr>
                   <tr>
-                    <td colspan="2" style="border-top: none;"><label for="exampleInputPassword1">Address Second Line</label>
+                    <td colspan="2" width="70%" style="border-top: none;"><label for="exampleInputPassword1">Address Second Line</label>
 					<input type="text" class="form-control col-xs-12" placeholder="Address Second Line"></td>
                   </tr>
                   <tr>
@@ -335,7 +341,7 @@
                 </tbody>
               </table>
 			  <div class="form-group    col-sm-12  col-md-12">
-                      <button type="button" class="btn btn-primary btn-xs">Add</button>
+                      <button type="button" class="btn btn-primary btn-xs" style="float:right;background:#34495E">Add</button>
 
                     </div>
             </div>
@@ -364,12 +370,15 @@
                 <tr>
                   <td class="col-sm-1  col-md-1" style="border-top:none;padding: 20px 0px;
     ">
-                2012</i>
+                <strong>2012</strong></i>
               </td>
-                  <td class="col-sm-10  col-md-10" style="border-top:none;padding:20px 10px;"><p>920, Holcomb Bridge Road, Suite # 410, Roswell, GA 30076920, Holcomb Bridge Road, Suite # 410, Roswell, GA 30076920, Holcomb Bridge Road, Suite # 410, Roswell, GA 30076</p></td>
+                  <td class="col-sm-7  col-md-7" style="border-top:none;padding:20px 10px;"><strong>920, Holcomb Bridge Road, Suite # 410, Roswell, GA 30076920, Holcomb Bridge Road, Suite # 410, Roswell, GA 30076920, Holcomb Bridge Road, Suite # 410, Roswell, GA 30076</strong></td>
                  
-                  <td class="col-sm-1  col-md-1" style="text-align:center;border-top:none;padding: 20px 0px;
-    f">
+                  <td class="col-xs-3  col-md-2" style="text-align:center;border-top:none;padding:20px 0px;"><label class="radio checkbox-custom checkbox-custom-sm" style="margin-top: 0px;margin-bottom: 0px;">
+                      <input type="radio" ng-model="options.position" value="toast-top-right"><i></i> Default
+                    </label> </td>
+                  <td class="col-xs-1  col-md-1" style="text-align:center;border-top:none;padding: 20px 0px;
+    font-size: 17px;">
                 <center><a href tile-control-close><i class="fa fa-times"></i></a></center>
              </td>
                 </tr>
@@ -420,11 +429,7 @@
                 <span ng-show="step4.phone.$invalid && !step4.phone.$pristine">Bad format.</span>
                </p>
             </div>
-          </div>
-<div class="form-group ">
-                      <button type="button" class="btn btn-primary btn-xs">Submit</button>
-
-                    </div>
+          </div> 
           <button type="submit" class="btn btn-default" ng-click="steps.step3=true" style="background-color: #dedede;">Previous</button>
           <button type="submit" ng-disabled="step4.$invalid" class="btn btn-default pull-right" ng-click="steps.step5=true" style="background-color: #dedede;">Next</button>
 
@@ -444,23 +449,26 @@
             <table class="table">
               <tbody>
                 <tr>
-                  <td style="border-top:none;padding: 20px 0px;width: 10%;
+                  <td class="col-xs-1 col-sm-1 col-md-1" style="border-top:none;padding: 20px 0px;
     ">
-                Name
+                <strong>Name</strong>
               </td>
-                  <td  style="border-top:none;padding:20px 10px;width: 80%;">University of hyderabad.500060University of hyderabad.500060University of hyderabad.500060University of hyderabad.500060</td>
-                 <td colspan="2" style="padding: 20px 0px;
-    width: 10%;border-top:none">
+                  <td class="col-xs-7 col-sm-7 col-md-8" style="border-top:none;padding:20px 10px;"><strong>University of hyderabad.University of hyderabad.500060University of hyderabad.500060University of hyderabad.500060</strong></td>
+                 <td class="col-xs-3 col-sm-3 col-md-2" style="text-align:center;border-top:none;padding:20px 0px;"><label class="radio checkbox-custom checkbox-custom-sm" style="margin-top: 0px;margin-bottom: 0px;">
+                      <input type="radio" ng-model="options.position" value="toast-top-right"><i></i> Default
+                    </label> </td>
+                  <td class="col-xs-1 col-sm-1 col-md-1" style="text-align:center;border-top:none;padding: 20px 0px;
+    font-size: 17px;">
                 <center><a href tile-control-close><i class="fa fa-times"></i></a></center>
              </td>
                   
                 </tr>
-                <tr>
+                 <tr>
                   <td style="padding: 20px 0px;
     border-top:none">
-                Skill
+                <strong>Skill</strong>
               </td>
-                  <td  style="padding:20px 10px;border-top:none">University of hyderabad.500060University of hyderabad.500060University of hyderabad.500060University of hyderabad.500060</td>
+                  <td  style="padding:20px 10px;border-top:none"><strong>University of hyderabad.500060University of hyderabad.</strong></td>
                  
                  
                 </tr>
@@ -476,8 +484,8 @@
 <tbody>
 <tr><th class="" style="vertical-align: middle;width: 30%;border-top:none"></th>
 				  <th class="" style="vertical-align: middle;width: 30%;border-top:none"></th>
-				  <th class="" style="text-align:center;width: 20%;vertical-align: middle;border-top:none"><label>Delete</label></th>
-				  <th class="" style="text-align:center;width: 20%;vertical-align: middle;border-top:none"><label>Default</label></th>
+				  <th class="" style="text-align:center;width: 20%;vertical-align: middle;border-top:none"><label><strong>Delete</strong></label></th>
+				  <th class="" style="text-align:center;width: 20%;vertical-align: middle;border-top:none"><label><strong>Default</strong></label></th>
 				   
 				</tr>
 
@@ -485,7 +493,7 @@
 
 
 				   <tr>
-				  <td class="" rowspan="3" style="vertical-align: middle;    padding-left: 0px; border-top:none"><label>Documents</label></td>
+				  <td class="" rowspan="3" style="vertical-align: middle;    padding-left: 0px; border-top:none"><label><strong>Documents</strong></label></td>
 				  <td style="padding-left: 0px;border-top:none">University </td>
 				  <td class="" style="border-top:none;text-align:center"><input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
    
@@ -536,18 +544,28 @@
 				</div>
 					  </div>
 					  
-			<div class="form-group col-sm-8">
+					  
+					  
+					 <div class="form-group" style="margin-top:30px">
 						<label for="exampleInputEmail1">Skills</label>
-						<md-content class="md-padding chipsdemoBasicUsage " ng-controller="mtChipsBasicDemoCtrl as ctrl">
-						<md-chips
-            ng-model="ctrl.tags"
-            readonly="ctrl.readonly"
-            placeholder="Enter a new skill"
-            delete-button-label="Remove Tag"
-            delete-hint="Press delete to remove tag"
-            secondary-placeholder="Enter a new skill"></md-chips>
-				</md-content>
-					  </div>		  
+						<div class="row">
+				  <div class="col-sm-8   col-md-9">
+					<select class="form-control">
+				  <option>PHP</option>
+				  <option>SQL</option>
+				  <option>Testing</option> 
+				</select>
+				  </div>
+				   
+				    
+				</div>
+					  </div> 
+					  
+					  
+					  
+					  
+					  
+			 	  
 					  
 					  
 					  
@@ -628,13 +646,16 @@
               </tbody>
             </table>
 			<div class="form-group">
-			<div class="col-md-6 col-xs-8 col-sm-8" style="padding-left: 0px;">
-                 <input  class="form-control" placeholder="Add more Certificates">
-                 
+			<div class="col-md-9 col-xs-8 col-sm-8" style="padding-left: 0px;">
+                  <select class="form-control">
+				  <option>Business Analysis</option>
+				  <option>Testing</option>
+				  <option>PHP</option> 
+				</select>
                 </div>	 
 
-<div class="col-md-6 col-xs-4 col-sm-4">
-<button type="button" class="btn btn-primary btn-xs">Add</button>
+<div class="col-md-3 col-xs-4 col-sm-4">
+<button type="button" class="btn btn-primary btn-xs" style="background:#34495E">Add</button>
 				
 					  
           </div>
@@ -643,7 +664,7 @@
 		  <div style="display:block;margin-top:30px;">
 		  
           <button type="submit" class="btn btn-default" ng-click="steps.step4=true" style="background-color: #dedede;">Previous</button>
-          <button type="submit" ng-disabled="step5.$invalid" class="btn btn-success pull-right">Finish</button>
+          <button type="submit" ng-disabled="step5.$invalid" class="btn btn-success pull-right" style="background:#58D68D">Save</button>
 
       </uib-tab>
 
