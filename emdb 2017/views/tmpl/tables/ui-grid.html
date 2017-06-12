@@ -114,12 +114,12 @@
                 </tr>
 				<tr>
                   <th>Rating</th>
-                  <td><i class="glyphicon glyphicon-star"></i> <i class="glyphicon glyphicon-star"></i> <i class="glyphicon glyphicon-star"></i> <i class="icon-star"></i>  </td>
+                  <td><div ng-init="x = 3" class="mb-10"><uib-rating ng-model="x" max="5" state-on="'fa fa-star text-orange text-lg'" state-off="'fa fa-star-o text-lg'"></uib-rating> <b>({{x}})</b></div></td>
                 </tr>
 				<tr>
                   <th>Comments</th>
                   <td>
-	  <div class="col-md-6">
+	  <div class="col-md-6" style="padding-left:0px!important">
 <div class="carousel slide" id="myCarousel">
   <div class="carousel-inner">
     <div class="item active">

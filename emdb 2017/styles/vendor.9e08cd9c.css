@@ -3154,8 +3154,7 @@ select[multiple].input-lg {
 @media (min-width: 768px) {
   .form-horizontal .control-label {
     padding-top: 7px;
-    margin-bottom: 0;
-    text-align: right;
+    margin-bottom: 0; 
   }
 }
 .form-horizontal .has-feedback .form-control-feedback {
@@ -12294,10 +12293,8 @@ md-slider {
       border-width: 3px;
       border-style: solid; }
   md-slider .md-sign {
-    /* Center the children (slider-thumb-text) */
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+    /* Center the children (slider-thumb-text) */ 
+	display: none!important;
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
@@ -12308,7 +12305,7 @@ md-slider {
     left: -14px;
     top: -20px;
     width: 28px;
-    height: 28px;
+    height: 28px; 
     border-radius: 28px;
     -webkit-transform: scale(0.4) translate3d(0, 70px, 0);
             transform: scale(0.4) translate3d(0, 70px, 0);
@@ -12331,7 +12328,9 @@ md-slider {
     md-slider .md-sign .md-thumb-text {
       z-index: 1;
       font-size: 12px;
-      font-weight: bold; }
+      font-weight: bold;
+	  visibility: hidden!important
+	  }
   md-slider .md-focus-thumb {
     position: absolute;
     left: -24px;
@@ -12368,7 +12367,7 @@ md-slider {
     border-style: solid;
     display: none; }
   md-slider.md-min .md-thumb:after {
-    background-color: white; }
+    background-color: rgb(255,87,34)!important; }
   md-slider.md-min .md-sign {
     opacity: 0; }
   md-slider:focus {

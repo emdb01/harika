@@ -3011,7 +3011,8 @@ html {
   .tile-header[class*='bg-']:not(.bg-default) .form-control::-webkit-input-placeholder,
   .tile-widget[class*='bg-']:not(.bg-default) .form-control::-webkit-input-placeholder,
   .tile-body[class*='bg-']:not(.bg-default) .form-control::-webkit-input-placeholder,
-  .tile-footer[class*='bg-']:not(.bg-default) .form-control::-webkit-input-placeholder {
+  .tile-footer[class*='bg-']:not(.bg-default) .form-control::-webkit-input-placeholder,
+  .tile-widget[class*='bg-']:not(.bg-default) .form-control::-webkit-select-placeholder{
     color: rgba(255, 255, 255, 0.5); }
   .tile[class*='bg-']:not(.bg-default) .form-control::-moz-placeholder,
   .tile-header[class*='bg-']:not(.bg-default) .form-control::-moz-placeholder,
@@ -3079,6 +3080,9 @@ html {
   color: rgba(255, 255, 255, 0.5); }
 
 @media only screen and (max-width: 628px) {
+	.comp{
+		margin-top:12px
+	}
   .tile .tile-header .controls {
     display: none; } }
 .form-control {
@@ -4854,7 +4858,11 @@ button:focus {
   outline: 0 !important;
 line-height: 22px!important;
     padding: 9px 20px!important;
-    border: none!important;  }
+    border: none!important;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+	}
   .btn.rounded-corners, .btn.btn-rounded {
     border-radius: 4px; }
     .btn.rounded-corners.btn-lg, .btn.btn-rounded.btn-lg {
@@ -11079,7 +11087,6 @@ table .emdbdetails1{
 	border:1px solid #dbe0e2
 }
 .companytitle{
-	color:#f59d56;
 	margin-top: 0px!important;
 }
 
@@ -11105,5 +11112,8 @@ table .emdbdetails1{
   transform: translateX(0);
 }
 
-
 .carousel-control1.left,.carousel-control.right {background-image:none;}
+
+i.compicon{
+	font-size:15px!important;
+}
