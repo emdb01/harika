@@ -27,6 +27,21 @@ md-radio-button.md-default-theme.md-checked .md-off, md-radio-button.md-checked 
 md-radio-button.md-default-theme .md-off, md-radio-button .md-off {
     border-color: rgba(123, 123, 123, 0.54)!important
 }
+@media (max-width:760px){
+.otherd{
+margin-top:20px;}
+}
+.btn-greensea{
+margin-right: 5px;
+border-radius: 5px!important;
+background: -webkit-linear-gradient( #e2e2e2,#fff,#ccc);
+background: -o-linear-gradient( #e2e2e2,#fff,#ccc);
+background: -moz-linear-gradient( #e2e2e2,#fff,#ccc);
+background: linear-gradient( #e2e2e2,#fff,#ccc);
+margin-bottom: 5px;
+border: none!important;
+color: #585858!important
+}
 </style> 
 
 
@@ -623,14 +638,16 @@ md-radio-button.md-default-theme .md-off, md-radio-button .md-off {
           <div class="form-group" style="margin-top:30px">
 						<label for="exampleInputEmail1">Name</label>
 						<div class="row">
-				  <div class="col-sm-8   col-md-9">
+				  <div class="col-xs-12 col-sm-6   col-md-6">
 					<select class="form-control">
 				  <option>Business Analysis</option>
 				  <option>Testing</option>
 				  <option>PHP</option> 
 				</select>
 				  </div>
-				   
+				   <div class="col-xs-12 col-sm-6   col-md-6 otherd">
+					<input type="text"  class="form-control">
+				  </div>
 				    
 				</div>
 					  </div>
@@ -640,14 +657,20 @@ md-radio-button.md-default-theme .md-off, md-radio-button .md-off {
 					 <div class="form-group" style="margin-top:30px">
 						<label for="exampleInputEmail1">Skills</label>
 						<div class="row">
-				  <div class="col-sm-8   col-md-9">
+						<div class="col-xs-12 col-sm-12 col-md-12">
+<button type="button" class="btn btn-greensea btn-border btn-rounded-20 mb-10">Greensea <i class="glyphicon glyphicon-remove"></i></button>
+						</div>
+				  <div class="col-xs-12 col-sm-6 col-md-6">
+				 
 					<select class="form-control">
 				  <option>PHP</option>
 				  <option>SQL</option>
 				  <option>Testing</option> 
 				</select>
 				  </div>
-				   
+				   <div class="col-xs-12 col-sm-6 col-md-6 otherd">
+					<input type="text"  class="form-control">
+				  </div>
 				    
 				</div>
 					  </div> 

@@ -28,85 +28,193 @@
   <!-- /page header -->
 
 
-
-
-
-
   <!-- page content -->
   <div class="pagecontent">
 
-    <div flex layout="column">
 
-      <section class="demo-container md-whiteframe-z1">
+    <!-- row -->
+    <div class="row">
 
-        <md-toolbar>
-          <div class="md-toolbar-tools">
-            <md-button class="md-icon-button" aria-label="Settings">
-              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
-            </md-button>
-            <h2>
-              <span>Basic Usage</span>
-            </h2>
-            <span flex></span>
-            <md-menu md-position-mode="target-right target">
-              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
-                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
-              </md-button>
-              <md-menu-content width="4">
-                <md-menu-item ng-repeat="item in [1, 2, 3]">
-                  <md-button>
-                    Option {{item}}
-                  </md-button>
-                </md-menu-item>
-              </md-menu-content>
-            </md-menu>
+
+      <!-- col --> 
+      <div class="col-md-12">
+
+        <!-- tile -->
+        
+        <!-- /tile -->
+<section class="tile" fullscreen="isFullscreen01">
+		
+		<div class="tile-body">
+
+
+                    
+            <form class="form-horizontal" role="form"> 
+			<h2 class="md-title" style="margin-bottom:20px">Job Details</h2>
+              <div class="form-group">
+              <div class="col-sm-12">
+                
+               
+                  <input type="email" class="form-control" id="inputEmail3" placeholder="Job Title*">
+                 
+                
+              </div></div>
+              <div class="form-group">
+			  <div class="col-sm-12">
+                 <select name="" class="form-control" required>
+                    <option>Skills*</option>
+                    <option>Jan</option>
+				  <option>Feb</option>
+				  <option>March</option>
+				  <option>April</option>
+                  </select>
+				  <md-content class="md-padding chipsdemoBasicUsage " ng-controller="mtChipsBasicDemoCtrl as ctrl" style="padding-left:0px;padding-right:0px">
+                  <md-chips
+            ng-model="ctrl.tags"
+            readonly="ctrl.readonly"
+            placeholder="Enter a Skill"
+            delete-button-label="Remove Tag"
+            delete-hint="Press delete to remove tag"
+            secondary-placeholder="Add" style=""></md-chips>
+			
+			</md-content>
+                </div>
+              </div>
+               <div class="form-group">
+              <div class="col-sm-12">
+                 
+                  <div class="col-sm-12" style="border:1px solid #ccc;padding: 0px;">
+					 <text-angular ng-model="htmlVariable"><label>Job Description*</label></text-angular>
+				
+				  
+                
+              
+              </div>
+              </div> 
+			  
+              </div>
+               
+			  
+            
+ 
+			<h2 class="md-title" style="margin-top: 42px;margin-bottom:20px"> Location</h2>
+              <div class="form-group">
+              <div class="col-sm-6">
+                
+               
+                  <input type="email" class="form-control" id="inputEmail3" placeholder="Job City*">
+                 
+                
+              </div>
+			  
+			  <div class="col-sm-6 comp">
+                 <select name="" class="form-control" required>
+                    <option>State*</option>
+                    <option>Jan</option>
+				  <option>Feb</option>
+				  <option>March</option>
+				  <option>April</option>
+                  </select>
+                  
+                
+                </div>
+			  
+			  </div>
+              <div class="form-group">
+			  
+				<div class="col-sm-6">
+                 <select name="" class="form-control mb-10" required>
+                    <option>Country*</option>
+                    <option>Jan</option>
+				  <option>Feb</option>
+				  <option>March</option>
+				  <option>April</option>
+                  </select>
+                  
+                </div>
+				<div class="col-sm-6 comp">
+                
+               
+                  <input type="email" class="form-control" id="inputEmail3" placeholder="Zip Code*">
+                 
+                
+              </div>
+              </div>
+			  
+			  
+			  <h2 class="md-title" style="margin-top: 42px;margin-bottom:20px"> Checkout</h2>
+              <div class="form-group">
+               <div class="col-sm-6"><label>Number of Jobs</label>
+						 
+					 
+			  
+			  
+                 <select name="" class="form-control" required>
+                    <option>1 job @ $23</option>
+                    <option>1 job @ $23</option>
+                    <option>1 job @ $23</option>
+                    <option>1 job @ $23</option>
+                    <option>1 job @ $23</option>
+                     
+                  </select>
+                  
+                
+                </div>
+			  
+			  </div>
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+                
+               <div class="form-group" style="padding-right: 15px;">
+			   <button type="button" class="btn btn-primary btn-xs" style="float:right;    background:#34495E">Continue</button>
+                      
+
+                    </div>
+			  
+            </form>
+			
+			
+			
+			
+			
+			
+			
+			
           </div>
-        </md-toolbar>
+		 
+		
+		
+		</section>
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+      </div>
+      <!-- /col -->
 
-        <md-content class="md-padding">
 
-          <md-card>
-            <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
-            <md-card-content>
-              <h2 class="md-title">Paracosm</h2>
-              <p>
-                The titles of Washed Out's breakthrough song and the first single from Paracosm share the
-                two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
-              </p>
-            </md-card-content>
-            <div class="md-actions" layout="row" layout-align="end center">
-              <md-button>Action 1</md-button>
-              <md-button>Action 2</md-button>
-            </div>
-          </md-card>
-          <br/>
-          <md-card>
-            <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
-            <md-card-content>
-              <h2 class="md-title">Paracosm</h2>
-              <p>
-                The titles of Washed Out's breakthrough song and the first single from Paracosm share the
-                two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
-              </p>
-            </md-card-content>
-          </md-card>
-          <br/>
-          <md-card>
-            <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
-            <md-card-content>
-              <h2 class="md-title">Paracosm</h2>
-              <p>
-                The titles of Washed Out's breakthrough song and the first single from Paracosm share the
-                two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
-              </p>
-            </md-card-content>
-          </md-card>
 
-        </md-content>
 
-      </section>
+
+
+
+
+
+
 
     </div>
+    <!-- /row -->
+
 
 
   </div>
