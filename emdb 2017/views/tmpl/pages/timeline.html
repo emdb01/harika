@@ -1,4 +1,5 @@
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="styles/build/js/intlTelInput.js"></script>
 <div class="page page-profile">
 
 
@@ -80,15 +81,15 @@
 			  <div class="col-sm-6 comp">
                 <label for="inputPassword3" class="control-label">Phone</label>
                
-                  <input type="password" class="form-control" id="inputPassword3" placeholder="">
+                  <input class="form-control"  id="phone" type="tel" placeholder="">
                 
                 </div>
               </div>
                <div class="form-group">
               <div class="col-sm-6">
-                <label for="inputEmail3" class="control-label">Fax</label>
+                <label for="inputEmail3" class="control-label" >Fax</label>
                 
-                  <input type="email" class="form-control" id="inputEmail3" placeholder="">
+                  <input class="form-control" id="phone1" type="tel" placeholder="">
                  
               
               </div>
@@ -115,12 +116,12 @@
 			  <div class="form-group">
                <div class="col-sm-6">
                 <label for="inputEmail3" class="control-label">Logo</label>
-                 <div class="cpage-imgcrop" style="margin-top:10px"> 
-               
-          <input ui-jq="filestyle" type="file" class="filestyle" ui-options="{
+                 <div class="" style="margin-top:10px"> 
+               <input ui-jq="filestyle" type="file" class="filestyle" ui-options="{
             buttonText: 'Select image',
             iconName: 'fa fa-file-image-o'
-          }" id="fileInput">
+          }" id="fileInput"><img src="">
+            
        
                  </div>
              
@@ -217,7 +218,7 @@
               </div>
               <div class="col-sm-6 comp">
                 <label for="inputPassword3" class=" control-label">Phone</label>
-                  <input type="password" class="form-control" id="inputPassword3" placeholder="">
+                  <input  class="form-control"  id="phone2" type="tel" placeholder="">
                
                 </div>
 			  
@@ -270,5 +271,74 @@
 
 
 
-
+<script>
+    $("#phone").intlTelInput({
+      // allowDropdown: false,
+      // autoHideDialCode: false,
+      // autoPlaceholder: "off",
+      // dropdownContainer: "body",
+      // excludeCountries: ["us"],
+      // formatOnDisplay: false,
+      // geoIpLookup: function(callback) {
+      //   $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+      //     var countryCode = (resp && resp.country) ? resp.country : "";
+      //     callback(countryCode);
+      //   });
+      // },
+      // initialCountry: "auto",
+      // nationalMode: false,
+      // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+      // placeholderNumberType: "MOBILE",
+      // preferredCountries: ['cn', 'jp'],
+      // separateDialCode: true,
+      utilsScript: "styles/build/js/utils.js"
+    });
+  </script>
+  <script>
+    $("#phone1").intlTelInput({
+      // allowDropdown: false,
+      // autoHideDialCode: false,
+      // autoPlaceholder: "off",
+      // dropdownContainer: "body",
+      // excludeCountries: ["us"],
+      // formatOnDisplay: false,
+      // geoIpLookup: function(callback) {
+      //   $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+      //     var countryCode = (resp && resp.country) ? resp.country : "";
+      //     callback(countryCode);
+      //   });
+      // },
+      // initialCountry: "auto",
+      // nationalMode: false,
+      // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+      // placeholderNumberType: "MOBILE",
+      // preferredCountries: ['cn', 'jp'],
+      // separateDialCode: true,
+      utilsScript: "styles/build/js/utils.js"
+    });
+  </script>
+  <script>
+    $("#phone2").intlTelInput({
+      // allowDropdown: false,
+      // autoHideDialCode: false,
+      // autoPlaceholder: "off",
+      // dropdownContainer: "body",
+      // excludeCountries: ["us"],
+      // formatOnDisplay: false,
+      // geoIpLookup: function(callback) {
+      //   $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+      //     var countryCode = (resp && resp.country) ? resp.country : "";
+      //     callback(countryCode);
+      //   });
+      // },
+      // initialCountry: "auto",
+      // nationalMode: false,
+      // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+      // placeholderNumberType: "MOBILE",
+      // preferredCountries: ['cn', 'jp'],
+      // separateDialCode: true,
+      utilsScript: "styles/build/js/utils.js"
+    });
+  </script>
+  
 </div>

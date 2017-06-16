@@ -20,6 +20,7 @@ colorpicker-saturation i {
   position: absolute;
   top: 0;
   left: 0;
+  
   margin: -4px 0 0 -4px;
 }
 colorpicker-saturation i::after {
@@ -11546,7 +11547,7 @@ md-radio-button {
   display: block;
   margin-bottom: 16px;
   white-space: nowrap;
-  cursor: pointer;
+  cursor: pointer;float: left;
   position: relative; }
   md-radio-button[disabled] {
     cursor: default; }
@@ -11562,7 +11563,6 @@ md-radio-button {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    left: 0;
     right: auto; }
     html[dir=rtl] md-radio-button .md-container {
       left: auto;
@@ -11677,7 +11677,7 @@ md-radio-button {
     border-radius: 50%; }
 
 md-radio-group md-radio-button:not(:first-child) {
-  margin-top: 16px; }
+  margin-top: 0px; }
 
 md-radio-group.layout-row md-radio-button {
   margin-top: 0;

@@ -1,8 +1,34 @@
+
 <style>
 md-slider.md-default-theme.md-warn .md-track.md-track-fill, md-slider.md-warn .md-track.md-track-fill {
     background-color: #ccc!important;
 } 
+md-radio-group.md-default-theme:not([disabled]) .md-primary .md-checked .md-off, md-radio-group:not([disabled]) .md-primary .md-checked .md-off, md-radio-group.md-default-theme:not([disabled]) .md-primary.md-checked .md-off, md-radio-group:not([disabled]) .md-primary.md-checked .md-off, md-radio-group.md-default-theme:not([disabled]).md-primary .md-checked .md-off, md-radio-group:not([disabled]).md-primary .md-checked .md-off, md-radio-group.md-default-theme:not([disabled]).md-primary.md-checked .md-off, md-radio-group:not([disabled]).md-primary.md-checked .md-off, md-radio-button.md-default-theme:not([disabled]) .md-primary .md-checked .md-off, md-radio-button:not([disabled]) .md-primary .md-checked .md-off, md-radio-button.md-default-theme:not([disabled]) .md-primary.md-checked .md-off, md-radio-button:not([disabled]) .md-primary.md-checked .md-off, md-radio-button.md-default-theme:not([disabled]).md-primary .md-checked .md-off, md-radio-button:not([disabled]).md-primary .md-checked .md-off, md-radio-button.md-default-theme:not([disabled]).md-primary.md-checked .md-off, md-radio-button:not([disabled]).md-primary.md-checked .md-off {
+    border-color: #008000!important;
+}
+md-radio-group.md-default-theme:not([disabled]) .md-primary1 .md-checked .md-off, md-radio-group:not([disabled]) .md-primary1 .md-checked .md-off, md-radio-group.md-default-theme:not([disabled]) .md-primary1.md-checked .md-off, md-radio-group:not([disabled]) .md-primary1.md-checked .md-off, md-radio-group.md-default-theme:not([disabled]).md-primary1 .md-checked .md-off, md-radio-group:not([disabled]).md-primary1 .md-checked .md-off, md-radio-group.md-default-theme:not([disabled]).md-primary1.md-checked .md-off, md-radio-group:not([disabled]).md-primary1.md-checked .md-off, md-radio-button.md-default-theme:not([disabled]) .md-primary1 .md-checked .md-off, md-radio-button:not([disabled]) .md-primary1 .md-checked .md-off, md-radio-button.md-default-theme:not([disabled]) .md-primary1.md-checked .md-off, md-radio-button:not([disabled]) .md-primary1.md-checked .md-off, md-radio-button.md-default-theme:not([disabled]).md-primary1 .md-checked .md-off, md-radio-button:not([disabled]).md-primary1 .md-checked .md-off, md-radio-button.md-default-theme:not([disabled]).md-primary1.md-checked .md-off, md-radio-button:not([disabled]).md-primary1.md-checked .md-off {
+    border-color: red!important;
+}
+md-radio-group.md-default-theme:not([disabled]) .md-primary1 .md-on, md-radio-group:not([disabled]) .md-primary1 .md-on, md-radio-group.md-default-theme:not([disabled]).md-primary1 .md-on, md-radio-group:not([disabled]).md-primary1 .md-on, md-radio-button.md-default-theme:not([disabled]) .md-primary1 .md-on, md-radio-button:not([disabled]) .md-primary1 .md-on, md-radio-button.md-default-theme:not([disabled]).md-primary1 .md-on, md-radio-button:not([disabled]).md-primary1 .md-on {
+    background-color: red!important;
+}
+md-radio-group.md-default-theme:not([disabled]) .md-primary .md-on, md-radio-group:not([disabled]) .md-primary .md-on, md-radio-group.md-default-theme:not([disabled]).md-primary .md-on, md-radio-group:not([disabled]).md-primary .md-on, md-radio-button.md-default-theme:not([disabled]) .md-primary .md-on, md-radio-button:not([disabled]) .md-primary .md-on, md-radio-button.md-default-theme:not([disabled]).md-primary .md-on, md-radio-button:not([disabled]).md-primary .md-on {
+    background-color: #008000!important
+}
+md-radio-button.md-default-theme.md-checked .md-ink-ripple, md-radio-button.md-checked .md-ink-ripple {
+    color: transparent!important
+}
+md-radio-button.md-default-theme .md-on, md-radio-button .md-on {
+    background-color: #FFA500!important
+}
+md-radio-button.md-default-theme.md-checked .md-off, md-radio-button.md-checked .md-off {
+    border-color:#FFA500 !important
+}
+md-radio-button.md-default-theme .md-off, md-radio-button .md-off {
+    border-color: rgba(123, 123, 123, 0.54)!important
+}
 </style> 
+
 <div class="page page-form-wizard">
 
 
@@ -55,19 +81,27 @@ md-slider.md-default-theme.md-warn .md-track.md-track-fill, md-slider.md-warn .m
 
           <div class="row p-30">
                           
-                            <div class="col-sm-12 col-md-12 emdb">
+                          
+							
+						<div class="col-sm-12 col-md-12">
                                 <div class="col-xs-4 col-sm-4 col-md-4" style="text-align:center">Available </div>
 						   <div class="col-xs-4 col-md-4" style="text-align:center">On vacation</div>
 						   <div class="col-xs-4 col-md-4" style="text-align:center">No more working with this company</div>
 						   
-						     
-            <center><md-slider flex class="md-warn" md-discrete ng-model="rating2" step="1" min="1" max="3" aria-label="rating" style="width:67%;margin:auto;padding:30px 0px;">
-            </md-slider></center>
+	 
+			 	 <div class="" style="clear:both;display:block;margin:30px auto;">
+				 
+            <center><md-radio-group ng-model="data.group1">
+<md-radio-button value="Apple" class="md-primary col-xs-4 col-sm-4 col-md-4" aria-checked="true"></md-radio-button>
+<md-radio-button value="Banana" class=" md-active col-xs-4 col-sm-4 col-md-4">  </md-radio-button>
+<md-radio-button value="Mango" class="md-primary1 col-xs-4 col-sm-4 col-md-4"></md-radio-button>
+            </md-radio-group></center>
 			
 			
-			
+			</div>	
 			 
-                            </div>
+                            </div>	
+							
 
           <button type="submit" ng-disabled="step1.$invalid" class="btn btn-default" ng-click="steps.step2=true" style="margin-top:20px;background-color: #dedede;float:right">Next</button>
                         </div>
@@ -118,11 +152,11 @@ md-slider.md-default-theme.md-warn .md-track.md-track-fill, md-slider.md-warn .m
                       <div class="form-group    col-sm-12  col-md-12">
 						<label for="exampleInputEmail1">Birthday</label>
 						<div class="row">
-						<div class="col-xs-3 col-sm-4">
+						<div class="col-xs-4 col-sm-4">
 					<input type="text" class="form-control" placeholder="Year">
 				  </div>
-						 <div class="col-sm-4 col-xs-5">
-						 <select name="f2" class="form-control mb-10" ng-model="fc2" required>
+						 <div class="col-sm-4 col-xs-4">
+						 <select name="" class="form-control mb-10" ng-model="" required>
                     <option value="">Month</option>
                     <option>Jan</option>
 				  <option>Feb</option>
@@ -132,7 +166,7 @@ md-slider.md-default-theme.md-warn .md-track.md-track-fill, md-slider.md-warn .m
 					
 				  </div>
 				  <div class="col-sm-4 col-xs-4">
-					<select name="f2" class="form-control mb-10" ng-model="fc2" required>
+					<select name="" class="form-control mb-10" ng-model="" required>
                     <option value="">Day</option>
                     <option value="foo">1</option>
                     <option value="bar">2</option>
@@ -149,7 +183,7 @@ md-slider.md-default-theme.md-warn .md-track.md-track-fill, md-slider.md-warn .m
 						<label for="exampleInputPassword1">Gender</label>
 						<div class="row">
 						 <div class="col-sm-12">
-					<select class="form-control">
+					<select class="form-control month">
 				  <option>Select</option>
 				  <option>Male</option>
 				  <option>Female</option> 
@@ -161,7 +195,7 @@ md-slider.md-default-theme.md-warn .md-track.md-track-fill, md-slider.md-warn .m
 						<label for="exampleInputEmail1">Fax</label>
 						<div class="row">
 				  <div class="col-sm-12">
-					<input  type="text" placeholder="Skype Id" class="form-control" >
+					<input  type="text" placeholder="Fax" class="form-control" >
 				  </div>
 				   
 				</div>
@@ -207,17 +241,67 @@ md-slider.md-default-theme.md-warn .md-track.md-track-fill, md-slider.md-warn .m
 					
 				<div class="form-group col-md-6" ng-class="{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine, 'has-success' : userForm.phone.$valid && !userForm.phone.$pristine}">
                 <label for="phone">Primary Contact Number </label>
-                <input type="text" name="phone" id="phone" class="form-control" ng-model="user.phone" placeholder="(XXX) XXXX XXX" ng-pattern="/\([0-9]{3}\) ([0-9]{3}) ([0-9]{3})$/">
+                <input name="phone" id="phone3" type="tel" class="form-control" ng-model="user.phone" placeholder="(XXX) XXXX XXX" ng-pattern="/\([0-9]{3}\) ([0-9]{3}) ([0-9]{3})$/">
                 <p class="help-block">
                   <span ng-show="userForm.phone.$invalid && !userForm.phone.$pristine">Phone in bad format.</span>
                 </p>
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="styles/build/js/intlTelInput.js"></script>
+                 <script>
+    $("#phone3").intlTelInput({
+      // allowDropdown: false,
+      // autoHideDialCode: false,
+      // autoPlaceholder: "off",
+      // dropdownContainer: "body",
+      // excludeCountries: ["us"],
+      // formatOnDisplay: false,
+      // geoIpLookup: function(callback) {
+      //   $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+      //     var countryCode = (resp && resp.country) ? resp.country : "";
+      //     callback(countryCode);
+      //   });
+      // },
+      // initialCountry: "auto",
+      // nationalMode: false,
+      // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+      // placeholderNumberType: "MOBILE",
+      // preferredCountries: ['cn', 'jp'],
+      // separateDialCode: true,
+      utilsScript: "styles/build/js/utils.js"
+    });
+  </script>
               </div>	
 					<div class="form-group col-md-6" ng-class="{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine, 'has-success' : userForm.phone.$valid && !userForm.phone.$pristine}">
                 <label for="phone">Secondary Contact Number </label>
-                <input type="text" name="phone" id="phone" class="form-control" ng-model="user.phone" placeholder="(XXX) XXXX XXX" ng-pattern="/\([0-9]{3}\) ([0-9]{3}) ([0-9]{3})$/">
+                <input name="phone" id="phone4" type="tel" class="form-control" ng-model="user.phone" placeholder="(XXX) XXXX XXX" ng-pattern="/\([0-9]{3}\) ([0-9]{3}) ([0-9]{3})$/">
                 <p class="help-block">
                   <span ng-show="userForm.phone.$invalid && !userForm.phone.$pristine">Phone in bad format.</span>
                 </p>
+				
+				
+  <script>
+    $("#phone4").intlTelInput({
+      // allowDropdown: false,
+      // autoHideDialCode: false,
+      // autoPlaceholder: "off",
+      // dropdownContainer: "body",
+      // excludeCountries: ["us"],
+      // formatOnDisplay: false,
+      // geoIpLookup: function(callback) {
+      //   $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+      //     var countryCode = (resp && resp.country) ? resp.country : "";
+      //     callback(countryCode);
+      //   });
+      // },
+      // initialCountry: "auto",
+      // nationalMode: false,
+      // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+      // placeholderNumberType: "MOBILE",
+      // preferredCountries: ['cn', 'jp'],
+      // separateDialCode: true,
+      utilsScript: "styles/build/js/utils.js"
+    });
+  </script>
               </div>
 					
 					
@@ -404,7 +488,7 @@ md-slider.md-default-theme.md-warn .md-track.md-track-fill, md-slider.md-warn .m
                </p>
             </div>
             <div class="form-group col-md-6 mb-0">
-              <label for="phone">University </label>
+              <label for="">University </label>
              <select class="form-control">
 				  <option>Select</option>
 				  <option>University of USA</option>
@@ -419,7 +503,7 @@ md-slider.md-default-theme.md-warn .md-track.md-track-fill, md-slider.md-warn .m
           <div class="row">
             
             <div class="form-group col-md-6 mb-0">
-              <label for="phone">Passout </label>
+              <label for="">Passout </label>
              <select class="form-control">
 				  <option>2012</option>
 				  <option>2011</option>
@@ -445,9 +529,9 @@ md-slider.md-default-theme.md-warn .md-track.md-track-fill, md-slider.md-warn .m
 
 
 
- 
 
 
+  
 
 </div>
 </div>
