@@ -35,64 +35,161 @@
   <!-- page content -->
   <div class="pagecontent">
 
-    <div flex layout="column">
 
-      <section class="demo-container md-whiteframe-z1">
+    <!-- row -->
+    <div class="row">
 
-        <md-toolbar>
-          <div class="md-toolbar-tools">
-            <md-button class="md-icon-button" aria-label="Settings">
-              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+
+      <!-- col --> 
+      <div class="col-md-12">
+
+        <!-- tile -->
+        
+        <!-- /tile -->
+<section class="tile" fullscreen="isFullscreen01">
+		
+		<div class="tile-body">
+
+
+                    
+            <form class="form-horizontal" role="form"> 
+			<div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0px">
+			<h2 class="md-title" style="margin-bottom:20px">Job Details</h2></div>
+              
+              <div class="form-group">
+              <div class="col-sm-12">
+                
+               
+                  <input type="email" class="form-control" id="inputEmail3" placeholder="Job Title*">
+                 
+                
+              </div></div>
+              <div class="form-group">
+			  <div class="col-sm-12">
+                 <select name="" class="form-control" required>
+                    <option>Skills*</option>
+                    <option>Jan</option>
+				  <option>Feb</option>
+				  <option>March</option>
+				  <option>April</option>
+                  </select>
+				  <md-content class="md-padding chipsdemoBasicUsage " ng-controller="mtChipsBasicDemoCtrl as ctrl" style="padding-left:0px;padding-right:0px">
+                  <md-chips
+            ng-model="ctrl.tags"
+            readonly="ctrl.readonly"
+            placeholder="Enter a Skill"
+            delete-button-label="Remove Tag"
+            delete-hint="Press delete to remove tag"
+            secondary-placeholder="Add" style=""></md-chips>
+			
+			</md-content>
+                </div>
+              </div>
+               <div class="form-group">
+              <div class="col-sm-12">
+                 
+                  <div class="col-sm-12" style="border:1px solid #ccc;padding: 0px;">
+					 <text-angular ng-model="htmlVariable"><label>Job Description*</label></text-angular>
+				
+				  
+                
+              
+              </div>
+              </div> 
+			  
+              </div>
+               
+			  
+            
+ 
+			<h2 class="md-title" style="margin-top: 42px;margin-bottom:20px"> Location</h2>
+              <div class="form-group">
+              <div class="col-sm-6">
+                
+               
+                  <input type="email" class="form-control" id="inputEmail3" placeholder="Job City*">
+                 
+                
+              </div>
+			  
+			  <div class="col-sm-6 comp">
+                 <select name="" class="form-control" required>
+                    <option>State*</option>
+                    <option>Jan</option>
+				  <option>Feb</option>
+				  <option>March</option>
+				  <option>April</option>
+                  </select>
+                  
+                
+                </div>
+			  
+			  </div>
+              <div class="form-group">
+			  
+				<div class="col-sm-6">
+                 <select name="" class="form-control mb-10" required>
+                    <option>Country*</option>
+                    <option>Jan</option>
+				  <option>Feb</option>
+				  <option>March</option>
+				  <option>April</option>
+                  </select>
+                  
+                </div>
+				<div class="col-sm-6 comp">
+                
+               
+                  <input type="email" class="form-control" id="inputEmail3" placeholder="Zip Code*">
+                 
+                
+              </div>
+              </div>
+			  
+			  
+			  <h2 class="md-title" style="margin-top: 42px;margin-bottom:20px"> Checkout</h2>
+              <div class="form-group">
+               <div class="col-sm-6"><label>Number of Jobs</label>
+						 
+					 
+			  
+			  
+                 <select name="" class="form-control" required>
+                    <option>1 job @ $23</option>
+                    <option>1 job @ $23</option>
+                    <option>1 job @ $23</option>
+                    <option>1 job @ $23</option>
+                    <option>1 job @ $23</option>
+                     
+                  </select>
+                  
+                
+                </div>
+			  
+			  </div>
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+                
+               <div class="form-group" style="padding-right: 15px;">
+			      <md-content class="" id="popupContainer" style="margin-left: 10px;">
+					   <md-button class="md-primary md-raised" ng-click="showConfirm($event)" flex flex-md="100" style="float:right;    background:#58D68D">
+              Continue
             </md-button>
-            <h2>
-              <span>Basic Usage</span>
-            </h2>
-            <span flex></span>
-            <md-menu md-position-mode="target-right target">
-              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
-                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
-              </md-button>
-              <md-menu-content width="4">
-                <md-menu-item ng-repeat="item in [1, 2, 3]">
-                  <md-button>
-                    Option {{item}}
-                  </md-button>
-                </md-menu-item>
-              </md-menu-content>
-            </md-menu>
-          </div>
-        </md-toolbar>
-
-        <md-content class="md-padding" id="popupContainer">
-
-          <p class="inset">
-            Open a dialog over the app's content. Press escape or click outside to close the dialog and
-            send focus back to the triggering button.
-          </p>
-          <div class="dialog-demo-content" layout="row" layout-wrap >
-            <md-button class="md-primary md-raised" ng-click="showAlert($event)" flex flex-md="100">
-              Alert Dialog
+					  
+					  <md-button class="md-primary md-raised" ng-click="showAdvanced($event)" flex flex-md="100" style="background:#34495E">
+              Preview
             </md-button>
-            <md-button class="md-primary md-raised" ng-click="showConfirm($event)" flex flex-md="100">
-              Confirm Dialog
-            </md-button>
-            <md-button class="md-primary md-raised" ng-click="showAdvanced($event)" flex flex-md="100">
-              Custom Dialog
-            </md-button>
-          </div>
-          <div ng-if="status">
-            <br/>
-            <b layout="row" layout-align="center center" class="md-padding">
-              {{status}}
-            </b>
-          </div>
-
-          <script type="text/ng-template" id="dialog1.tmpl.html">
+<script type="text/ng-template" id="dialog1.tmpl.html">
             <md-dialog aria-label="Mango (Fruit)">
               <form>
                 <md-toolbar>
                   <div class="md-toolbar-tools">
-                    <h2>Mango (Fruit)</h2>
+                    <h2>Job Details</h2>
                     <span flex></span>
                     <md-button class="md-icon-button" ng-click="answer('not applicable')">
                       <md-icon md-font-icon="zmdi zmdi-close" aria-label="Close dialog"></md-icon>
@@ -100,40 +197,89 @@
                   </div>
                 </md-toolbar>
                 <md-dialog-content style="max-width:800px;max-height:810px; ">
-                  <div>
-                    <p>
-                      The mango is a juicy stone fruit belonging to the genus Mangifera, consisting of numerous tropical fruiting trees, cultivated mostly for edible fruit. The majority of these species are found in nature as wild mangoes. They all belong to the flowering plant family Anacardiaceae. The mango is native to South and Southeast Asia, from where it has been distributed worldwide to become one of the most cultivated fruits in the tropics.
-                    </p>
-                    <img style="margin: auto; max-width: 100%;" alt="Lush mango tree" src="https://material.angularjs.org/latest/img/mangues.jpg">
-                    <p>
-                      The highest concentration of Mangifera genus is in the western part of Malesia (Sumatra, Java and Borneo) and in Burma and India. While other Mangifera species (e.g. horse mango, M. foetida) are also grown on a more localized basis, Mangifera indica&mdash;the "common mango" or "Indian mango"&mdash;is the only mango tree commonly cultivated in many tropical and subtropical regions.
-                    </p>
-                    <p>
-                      It originated in Indian subcontinent (present day India and Pakistan) and Burma. It is the national fruit of India, Pakistan, and the Philippines, and the national tree of Bangladesh. In several cultures, its fruit and leaves are ritually used as floral decorations at weddings, public celebrations, and religious ceremonies.
-                    </p>
-                  </div>
+                  <div class="tile-body p-0" style="padding-top:20px!important ;">
+
+            <table class="table emdbdetails">
+               
+              <tbody>
+			   <tr>
+                  <th width="20%">Job Title</th>
+                  <td  width="80%">PHP Develope</td>
+                </tr>
+                <tr>
+                  <th>Skills</th>
+                  <td>java,php,my sql</td>
+                </tr>
+                <tr>
+                  <th>Job Description</th>
+                  <td>Atlanta is the capital of and the most populous city in the U.S. state of Georgia, with an estimated 2016 population of 472,522. Atlanta is the cultural and </td>
+                </tr>
+                <tr>
+                  <th>Location</th>
+                  <td>920, Holcomb Bridge Road, Suite # 410, Roswell, GA 30076920</td>
+                </tr>
+				<tr>
+                  <th>Checkout</th>
+                  <td> 1 job @ $23  
+             </td>
+                </tr>
+				  <tr>
+                  <th style="vertical-align: middle;">QR Code</th>
+                  <td> <img src="images/code.png"> </center>
+             </td>
+                </tr>
+              </tbody>
+            </table>
+</br>
+          </div>
                 </md-dialog-content>
-                <div class="md-actions" layout="row">
-                  <md-button href="http://en.wikipedia.org/wiki/Mango" target="_blank" hide show-md>
-                    More on Wikipedia
-                  </md-button>
-                  <span flex></span>
-                  <md-button ng-click="answer('not useful')">
-                    Not Useful
-                  </md-button>
-                  <md-button ng-click="answer('useful')" style="margin-right:20px;">
-                    Useful
-                  </md-button>
-                </div>
+                 
               </form>
             </md-dialog>
           </script>
+		  </md-content>
+                    </div>
+			  
+            </form>
+			
+			
+			
+			
+			
+			
+			
+			
+          </div>
+		 
+		
+		
+		</section>
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+      </div>
+      <!-- /col -->
 
-        </md-content>
 
-      </section>
+
+
+
+
+
+
+
+
 
     </div>
+    <!-- /row -->
+
 
 
   </div>

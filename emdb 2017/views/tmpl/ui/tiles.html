@@ -37,571 +37,108 @@
 
 
     <!-- row -->
-    <div class="row">
-      <!-- col -->
-      <div class="col-md-4">
+    
+    <!-- /row -->
 
+<div class="row">
 
+ 
+      <!-- col --> 
+      <div class="col-md-12">
 
         <!-- tile -->
         <section class="tile" fullscreen="isFullscreen01">
 
-          <!-- tile header -->
-          <div class="tile-header dvd dvd-btm">
-            <h1 class="custom-font"><strong>Basic</strong> Tile</h1>
-            <ul class="controls">
-              <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
-
-                <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
-
-                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
-                  <li>
-                    <a href tile-control-toggle>
-                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
-                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-refresh ng-click="ajaxFaker()">
-                      <fa name="refresh"></fa> Refresh
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-fullscreen ng-click="isFullscreen01 = !isFullscreen01">
-                      <fa name="expand"></fa> Fullscreen
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-lightbox>
-                      <fa name="magnet"></fa> Open in Lightbox
-                    </a>
-                  </li>
-
-                </ul>
-
-              </li>
-              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
-            </ul>
-          </div>
-          <!-- /tile header -->
-
-          <!-- tile widget -->
-          <div class="tile-widget">
-            <p>This is tile widget area.</p>
-          </div>
-          <!-- /tile widget -->
-
           <!-- tile body -->
           <div class="tile-body">
-            <p>This is tile body area.</p>
+ 
+                  <form class="form" role="form">
+
+<h2 class="md-title companytitle  pull-left" style="display:inline">Add / Edit Job Seeker Profile</h2>
+	
+                    <div class="row" style="display:block;padding-top:20px;clear:both">
+                 <div class="col-sm-8">
+					<div class="col-sm-10 p-0"><input  type="text" placeholder="EMDB ID, Email, Name, Phone
+
+and Address" class="form-control pull-left  " ></div>
+<div class="col-sm-2">
+
+<button type="submit"  class="btn btn-default pull-right" ng-click="steps.step4=true" style="background-color: #58D68D;"><i class="glyphicon glyphicon-search"></i> Search</button>
+				  </div>
+				   
+			
+                    </div>
+                    </div>
+
+                  
+                  </form>
+ 
+
           </div>
           <!-- /tile body -->
 
-          <!-- tile footer -->
-          <div class="tile-footer">
-            <p>This is tile footer area.</p>
-          </div>
-          <!-- /tile footer -->
-
         </section>
-        <!-- /tile -->
-
-
-
-
-        <!-- tile -->
-        <section class="tile" fullscreen="isFullscreen04">
-
-          <!-- tile header -->
-          <div class="tile-header dvd dvd-btm">
-            <h4 class="custom-font text-uppercase"><strong>Uppercased</strong> Heading</h4>
-            <ul class="controls">
-              <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
-
-                <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
-
-                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
-                  <li>
-                    <a href tile-control-toggle>
-                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
-                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-refresh ng-click="ajaxFaker()">
-                      <fa name="refresh"></fa> Refresh
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-fullscreen ng-click="isFullscreen04 = !isFullscreen04">
-                      <fa name="expand"></fa> Fullscreen
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-lightbox>
-                      <fa name="magnet"></fa> Open in Lightbox
-                    </a>
-                  </li>
-
-                </ul>
-
-              </li>
-              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
-            </ul>
-          </div>
-          <!-- /tile header -->
-
-          <!-- tile widget -->
-          <div class="tile-widget">
-            <p>This is tile widget area.</p>
-          </div>
-          <!-- /tile widget -->
+		
+		<section class="tile" fullscreen="isFullscreen01">
 
           <!-- tile body -->
-          <div class="tile-body">
-            <p>This is tile body area.</p>
+          <div class="tile-body p-0" style="padding-top:20px!important ;">
+<h2 class="md-title companytitle  pull-left" style="display:inline">Profile</h2>
+            <table class="table emdbdetails">
+               
+              <tbody>
+			   <tr>
+                  <th>Company</th>
+                  <td>technodrive</td>
+                </tr>
+                <tr>
+                  <th>Phone</th>
+                  <td>1234 567 789</td>
+                </tr>
+                <tr>
+                  <th>Fax</th>
+                  <td>12345678</td>
+                </tr>
+                <tr>
+                  <th>Email</th>
+                  <td>info@technodrive.com</td>
+                </tr>
+				<tr>
+                  <th>Address</th>
+                  <td>920, Holcomb Bridge Road, Suite # 410, Roswell, GA 30076920</td>
+                </tr>
+				 
+              </tbody>
+            </table>
+
           </div>
-          <!-- /tile body -->
-
-          <!-- tile footer -->
-          <div class="tile-footer">
-            <p>This is tile footer area.</p>
-          </div>
-          <!-- /tile footer -->
-
-        </section>
-        <!-- /tile -->
-
-
-
-        <!-- tile -->
-        <section class="tile" fullscreen="isFullscreen07">
-
-          <!-- tile header -->
-          <div class="tile-header dvd dvd-btm">
-            <h1 class="custom-font"><strong>Lined</strong> Tile</h1>
-            <ul class="controls">
-              <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
-
-                <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
-
-                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
-                  <li>
-                    <a href tile-control-toggle>
-                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
-                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-refresh ng-click="ajaxFaker()">
-                      <fa name="refresh"></fa> Refresh
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-fullscreen ng-click="isFullscreen07 = !isFullscreen07">
-                      <fa name="expand"></fa> Fullscreen
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-lightbox>
-                      <fa name="magnet"></fa> Open in Lightbox
-                    </a>
-                  </li>
-
-                </ul>
-
-              </li>
-              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
-            </ul>
-          </div>
-          <!-- /tile header -->
-
-          <!-- tile body -->
-          <div class="tile-body lined-paper">
-            <p>This is tile body area with lined paper background.</p>
-            <p>Use class .line-paper to apply this texture.</p>
-          </div>
-          <!-- /tile body -->
-
-        </section>
-        <!-- /tile -->
-
-
-
-      </div>
       <!-- /col -->
 
+</section>
 
-
-
-      <!-- col -->
-      <div class="col-md-4">
-
-
-
-        <!-- tile -->
-        <section class="tile bg-greensea" fullscreen="isFullscreen02">
-
-          <!-- tile header -->
-          <div class="tile-header dvd dvd-btm">
-            <h1 class="custom-font"><strong>Colored </strong>Tile</h1>
-            <ul class="controls">
-              <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
-
-                <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
-
-                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
-                  <li>
-                    <a href tile-control-toggle>
-                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
-                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-refresh ng-click="ajaxFaker()">
-                      <fa name="refresh"></fa> Refresh
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-fullscreen ng-click="isFullscreen02 = !isFullscreen02">
-                      <fa name="expand"></fa> Fullscreen
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-lightbox>
-                      <fa name="magnet"></fa> Open in Lightbox
-                    </a>
-                  </li>
-
-                </ul>
-
-              </li>
-              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
-            </ul>
-          </div>
-          <!-- /tile header -->
-
-          <!-- tile widget -->
-          <div class="tile-widget">
-            <p>This is tile widget area.</p>
-          </div>
-          <!-- /tile widget -->
+<section class="tile" fullscreen="isFullscreen01">
 
           <!-- tile body -->
-          <div class="tile-body">
-            <p>This is tile body area.</p>
+          <div class="tile-body p-0" style="padding-top:20px!important ;">
+<h2 class="md-title companytitle  pull-left" style="display:inline">Reports</h2>
+            <table class="table emdbdetails">
+               
+              <p>Open a dialog over the app's content. Press escape or click outside to close the dialog and
+            send focus back to the triggering button.</p>
+            </table>
+
           </div>
-          <!-- /tile body -->
-
-          <!-- tile footer -->
-          <div class="tile-footer">
-            <p>This is tile footer area.</p>
-          </div>
-          <!-- /tile footer -->
-
-        </section>
-        <!-- /tile -->
-
-
-
-
-        <!-- tile -->
-        <section class="tile" fullscreen="isFullscreen05">
-
-          <!-- tile header -->
-          <div class="tile-header bg-slategray text-center">
-            <button class="btn bg-tr-black pull-left btn-black-transparent" type="button"><i class="fa fa-caret-square-o-down"></i></button>
-            <h4 class="custom-font text-uppercase"><strong>Heading</strong> with Button</h4>
-            <ul class="controls">
-              <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
-
-                <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
-
-                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
-                  <li>
-                    <a href tile-control-toggle>
-                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
-                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-refresh ng-click="ajaxFaker()">
-                      <fa name="refresh"></fa> Refresh
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-fullscreen ng-click="isFullscreen05 = !isFullscreen05">
-                      <fa name="expand"></fa> Fullscreen
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-lightbox>
-                      <fa name="magnet"></fa> Open in Lightbox
-                    </a>
-                  </li>
-
-                </ul>
-
-              </li>
-              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
-            </ul>
-          </div>
-          <!-- /tile header -->
-
-          <!-- tile widget -->
-          <div class="tile-widget">
-            <p>This is tile widget area.</p>
-          </div>
-          <!-- /tile widget -->
-
-          <!-- tile body -->
-          <div class="tile-body">
-            <p>This is tile body area.</p>
-          </div>
-          <!-- /tile body -->
-
-          <!-- tile footer -->
-          <div class="tile-footer">
-            <p>This is tile footer area.</p>
-          </div>
-          <!-- /tile footer -->
-
-        </section>
-        <!-- /tile -->
-
-
-
-
-
-        <!-- tile -->
-        <section class="tile tile-simple bg-dutch">
-
-          <!-- tile header -->
-          <div class="tile-header">
-            <h1 class="custom-font"><strong>Simple</strong> Tile</h1>
-            <ul class="controls">
-              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
-            </ul>
-          </div>
-          <!-- /tile header -->
-
-          <!-- tile widget -->
-          <div class="tile-widget">
-            <p>This is tile widget area.</p>
-          </div>
-          <!-- /tile widget -->
-
-          <!-- tile body -->
-          <div class="tile-body">
-            <p>This is tile body area.</p>
-          </div>
-          <!-- /tile body -->
-
-          <!-- tile footer -->
-          <div class="tile-footer">
-            <p>This is tile footer area.</p>
-          </div>
-          <!-- /tile footer -->
-
-        </section>
-        <!-- /tile -->
-
-
-
-
-
-      </div>
       <!-- /col -->
 
+</section>
 
 
 
-
-      <!-- col -->
-      <div class="col-md-4">
-
-
-
-        <!-- tile -->
-        <section class="tile" fullscreen="isFullscreen03">
-
-          <!-- tile header -->
-          <div class="tile-header bg-blue">
-            <h1 class="custom-font"><strong>Colored Tile</strong> Header</h1>
-            <ul class="controls">
-              <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
-
-                <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
-
-                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
-                  <li>
-                    <a href tile-control-toggle>
-                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
-                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-refresh ng-click="ajaxFaker()">
-                      <fa name="refresh"></fa> Refresh
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-fullscreen ng-click="isFullscreen03 = !isFullscreen03">
-                      <fa name="expand"></fa> Fullscreen
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-lightbox>
-                      <fa name="magnet"></fa> Open in Lightbox
-                    </a>
-                  </li>
-
-                </ul>
-
-              </li>
-              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
-            </ul>
-          </div>
-          <!-- /tile header -->
-
-          <!-- tile widget -->
-          <div class="tile-widget bg-lightred">
-            <p>This is colored tile widget area.</p>
-          </div>
-          <!-- /tile widget -->
-
-          <!-- tile body -->
-          <div class="tile-body bg-greensea">
-            <p>This is colored tile body area.</p>
-          </div>
-          <!-- /tile body -->
-
-          <!-- tile footer -->
-          <div class="tile-footer bg-drank">
-            <p>This is colored tile footer area.</p>
-          </div>
-          <!-- /tile footer -->
-
-        </section>
-        <!-- /tile -->
-
-
-
-        <!-- tile -->
-        <section class="tile" fullscreen="isFullscreen06">
-
-          <!-- tile header -->
-          <div class="tile-header dvd dvd-btm">
-            <h1 class="custom-font"><strong>Tile with</strong> Rangepicker</h1>
-            <ul class="controls">
-
-              <li ng-controller="DaterangepickerCtrl">
-                <a href="javascript:;" daterangepicker="rangeOptions" date-begin="startDate" date-end="endDate">
-                  <span>Today</span>&nbsp;&nbsp;<i class="fa fa-angle-down"></i>
-                </a>
-              </li>
-
-              <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
-
-                <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
-
-                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
-                  <li>
-                    <a href tile-control-toggle>
-                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
-                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-refresh ng-click="ajaxFaker()">
-                      <fa name="refresh"></fa> Refresh
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-fullscreen ng-click="isFullscreen06 = !isFullscreen06">
-                      <fa name="expand"></fa> Fullscreen
-                    </a>
-                  </li>
-                  <li>
-                    <a href tile-control-lightbox>
-                      <fa name="magnet"></fa> Open in Lightbox
-                    </a>
-                  </li>
-
-                </ul>
-
-              </li>
-              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
-            </ul>
-          </div>
-          <!-- /tile header -->
-
-          <!-- tile widget -->
-          <div class="tile-widget">
-            <p>This is tile widget area.</p>
-          </div>
-          <!-- /tile widget -->
-
-          <!-- tile body -->
-          <div class="tile-body">
-            <p>This is tile body area.</p>
-          </div>
-          <!-- /tile body -->
-
-          <!-- tile footer -->
-          <div class="tile-footer">
-            <p>This is tile footer area.</p>
-          </div>
-          <!-- /tile footer -->
-
-        </section>
-        <!-- /tile -->
-
-
-        <!-- tile -->
-        <section class="tile tile-simple">
-
-          <!-- tile header -->
-          <div class="tile-header p-0">
-            <ul class="controls">
-              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
-            </ul>
-          </div>
-          <!-- /tile header -->
-
-          <!-- tile widget -->
-          <div class="tile-widget">
-            <p><strong>Simple tile without heading.</strong> This is tile widget area.</p>
-          </div>
-          <!-- /tile widget -->
-
-          <!-- tile body -->
-          <div class="tile-body">
-            <p>This is tile body area.</p>
-          </div>
-          <!-- /tile body -->
-
-          <!-- tile footer -->
-          <div class="tile-footer">
-            <p>This is tile footer area.</p>
-          </div>
-          <!-- /tile footer -->
-
-        </section>
-        <!-- /tile -->
-
-
-
-      </div>
-      <!-- /col -->
 
 
 
 
     </div>
-    <!-- /row -->
-
-
 
 
 
@@ -611,4 +148,5 @@
 
 
 
+</div>
 </div>

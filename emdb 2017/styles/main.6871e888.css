@@ -3086,6 +3086,7 @@ html {
   .tile .tile-header .controls {
     display: none; } }
 .form-control {
+	
   color: #616f77;
   outline: 0;
   vertical-align: top;
@@ -9099,7 +9100,7 @@ md-fab-actions .md-button.md-fab md-icon[md-font-icon] {
     font-size: 14px/1; }
 
 .md-button {
-  font-weight: 700; }
+  font-weight: 500; }
 
 .bottomSheet .md-inline-list-icon-label {
   display: inline-block;
